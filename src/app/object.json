@@ -1,0 +1,247 @@
+{
+    "foods": [
+      {
+        "category": "vegetables",
+        "items": [
+          {
+            "name": "Carrots",
+            "id": 1,
+            "price": 1.99,
+            "options": ["Regular", "Baby", "Organic"],
+            "image": ""
+          },
+          {
+            "name": "Broccoli",
+            "id": 2,
+            "price": 2.49,
+            "options": ["Regular", "Organic"],
+            "image": ""
+          },
+          {
+            "name": "Tomatoes",
+            "id": 3,
+            "price": 0.99,
+            "options": ["Roma", "Cherry", "Beefsteak"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "fruits",
+        "items": [
+          {
+            "name": "Apples",
+            "id": 1,
+            "price": 1.29,
+            "options": ["Red Delicious", "Gala", "Granny Smith", "Fuji"],
+            "image": ""
+          },
+          {
+            "name": "Bananas",
+            "id": 2,
+            "price": 0.69,
+            "options": ["Yellow", "Organic"],
+            "image": ""
+          },
+          {
+            "name": "Oranges",
+            "id": 3,
+            "price": 0.89,
+            "options": ["Navel", "Mandarin"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "milk&eggs",
+        "items": [
+          {
+            "name": "Milk",
+            "id": 1,
+            "price": 2.99,
+            "options": ["Whole", "Skim", "2%"],
+            "image": ""
+          },
+          {
+            "name": "Eggs",
+            "id": 2,
+            "price": 1.99,
+            "options": ["Large", "Medium", "Organic"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "drinks",
+        "items": [
+          {
+            "name": "Cola",
+            "id": 1,
+            "price": 1.99,
+            "options": ["Regular", "Diet", "Zero"],
+            "image": ""
+          },
+          {
+            "name": "Orange Juice",
+            "id": 2,
+            "price": 2.49,
+            "options": ["Pulp-Free", "With Pulp"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "cake",
+        "items": [
+          {
+            "name": "Chocolate Cake",
+            "id": 1,
+            "price": 9.99,
+            "options": ["Regular", "Large", "Double Chocolate"],
+            "image": ""
+          },
+          {
+            "name": "Vanilla Cake",
+            "id": 2,
+            "price": 8.99,
+            "options": ["Regular", "Large", "Buttercream"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "icecream",
+        "items": [
+          {
+            "name": "Chocolate Ice Cream",
+            "id": 1,
+            "price": 4.99,
+            "options": ["Vanilla Chocolate Chip", "Mint Chocolate Chip", "Cookie Dough"],
+            "image": ""
+          },
+          {
+            "name": "Strawberry Ice Cream",
+            "id": 2,
+            "price": 4.99,
+            "options": ["Classic Strawberry", "Strawberry Cheesecake"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "bakery",
+        "items": [
+          {
+            "name": "Bread",
+            "id": 1,
+            "price": 2.49,
+            "options": ["White", "Whole Wheat", "Multigrain"],
+            "image": ""
+          },
+          {
+            "name": "Bagels",
+            "id": 2,
+            "price": 3.99,
+            "options": ["Plain", "Everything", "Cinnamon Raisin"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "snacks",
+        "items": [
+          {
+            "name": "Potato Chips",
+            "id": 1,
+            "price": 1.99,
+            "options": ["Regular", "Barbecue", "Sour Cream & Onion"],
+            "image": ""
+          },
+          {
+            "name": "Pretzels",
+            "id": 2,
+            "price": 1.49,
+            "options": ["Salted", "Unsalted"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "grain",
+        "items": [
+          {
+            "name": "Rice",
+            "id": 1,
+            "price": 2.99,
+            "options": ["White", "Brown", "Basmati"],
+            "image": ""
+          },
+          {
+            "name": "Pasta",
+            "id": 2,
+            "price": 1.99,
+            "options": ["Spaghetti", "Penne", "Fettuccine"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "cheese",
+        "items": [
+          {
+            "name": "Cheddar Cheese",
+            "id": 1,
+            "price": 3.99,
+            "options": ["Sharp", "Mild", "Aged"],
+            "image": ""
+          },
+          {
+            "name": "Mozzarella Cheese",
+            "id": 2,
+            "price": 4.49,
+            "options": ["Shredded", "Fresh", "Sliced"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "cleaning stuff",
+        "items": [
+          {
+            "name": "Dish Soap",
+            "id": 1,
+            "price": 2.99,
+            "options": ["Lemon", "Orange", "Grapefruit"],
+            "image": ""
+          },
+          {
+            "name": "All-Purpose Cleaner",
+            "id": 2,
+            "price": 3.49,
+            "options": ["Lavender", "Citrus", "Fresh Scent"],
+            "image": ""
+          }
+        ]
+      },
+      {
+        "category": "biscuit",
+        "items": [
+          {
+            "name": "Chocolate Chip Cookies",
+            "id": 1,
+            "price": 2.49,
+            "options": ["Regular", "Soft-Baked", "Double Chocolate"],
+            "image": ""
+          },
+          {
+            "name": "Oatmeal Cookies",
+            "id": 2,
+            "price": 2.49,
+            "options": ["Regular", "Raisin", "Cranberry"],
+            "image": ""
+          }
+        ]
+      }
+    ]
+  }
+  
