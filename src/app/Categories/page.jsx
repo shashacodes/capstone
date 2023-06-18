@@ -1,58 +1,101 @@
 import Image from "next/image";
+import { MdArrowBackIosNew } from "react-icons/md";
+import Link from "next/link";
 import React from "react";
 
-async function fetchfood() {
-  const response = fetch(
-    "https://raw.githubusercontent.com/shashacodes/capstone/master/src/app/object.json"
-  );
-  const data = await (await response).json();
-  return data;
-}
-
-export default async function Page() {
-  const data2 = await fetchfood();
-  const items = [
-    {
-      id: 1,
-      name: "Apple",
-      price: 0.99,
-      image:
-        "https://github.com/shashacodes/capstone/commit/4c2b9354a008b8e80af7249bf1baa0da08c29bd2?short_path=e001308#diff-e001308f53d7672f9fce64ce18c6234604a476a80c695e0df0ba0b29445ea825",
-    },
-    {
-      id: 2,
-      name: "Banana",
-      price: 0.79,
-      image:
-        "https://github.com/shashacodes/capstone/commit/4c2b9354a008b8e80af7249bf1baa0da08c29bd2?short_path=6318d16#diff-6318d16da26cf3cadaebbdae7554410b91640922c14976d999dbf97b323d28fb",
-    },
-  ];
-
-  const itemList = items.map((item) => (
-    <div
-      className="grid grid-cols-2 border rounded-xl border-transparent gap-8 p-5"
-      key={item.id}
-    >
-      {" "}
-      <section>
-        <h3 className="p-8 border rounded-xl">
-          {item.name},{item.price}
-        </h3>
-        <Image src={item.image} alt="apple" width={200} height={100} />
-      </section>
+export default function page() {
+  return (
+    <div className="p-5 gap-10 md:max-w-[640px] max-w-[480px] md:ml-3 mr-[40%]">
+      <Link href="/">
+        <span className="">
+          <MdArrowBackIosNew size={20} />
+        </span>
+      </Link>
+      {/* <div>{foodlist}</div> */}
+      <div className="grid grid-cols-3 gap-20 p-10">
+        <div className="flex flex-col ">
+          <section className="md:p-10 p-8  border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/vegg.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p> vegetables </p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/fruits.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p>Fruits</p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/milk&eggs.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p className=""> Milk&Eggs </p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/drinks.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p> Drinks </p>
+        </div>
+        <div className="flex flex-col">
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/cakes.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p> Cakes </p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/icecream.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p>Ice Cream</p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/bakery.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p> Bakery </p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/snacks.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p>Snacks</p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/grains.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p>Grains</p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/cheese.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p>Cheese</p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/cleaning.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p> Cleaning Stuffs </p>
+        </div>
+        <div className="flex flex-col">
+          {" "}
+          <section className="md:p-10 p-8 border rounded-xl bg-[url('https://github.com/shashacodes/capstone/blob/master/src/app/media/biscuit.jpg?raw=true')]">
+            <h1 className="p-5"> </h1>
+          </section>
+          <p> Biscuits </p>
+        </div>
+      </div>
     </div>
-  ));
-
-  // const foodlist = data2.foods.map((foods) => (
-  //   <div
-  //     key={foods.id}
-  //     className="grid grid-cols-2 border rounded-xl border-transparent gap-8 p-5"
-  //   >
-  //     <h1 className="p-8 border rounded-xl bg-slate-500"></h1>
-  //     <h1 className="bg-slate-400 p-8 border rounded-xl"></h1>
-  //     <h1 className="bg-slate-300 p-8 border rounded-xl"></h1>
-  //   </div>
-  // ));
-
-  return <div>{itemList}</div>;
+  );
 }

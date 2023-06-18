@@ -4,10 +4,17 @@ import { TbPhoneCall } from "react-icons/tb";
 import { SiWebauthn } from "react-icons/si";
 import { TfiTime } from "react-icons/tfi";
 import { AiOutlineMail } from "react-icons/ai";
+import { MdArrowBackIosNew } from "react-icons/md";
+import Link from "next/link";
 
 export default function page() {
   return (
     <div className="text-2xl gap-8 p-6 mt-10">
+      <Link href="/">
+        <span>
+          <MdArrowBackIosNew size={20} />
+        </span>
+      </Link>
       <section className="flex gap-6 mb-5 border p-4">
         <span>
           <MdLocationPin size={20} />
