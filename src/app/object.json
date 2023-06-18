@@ -1,4 +1,5 @@
-[
+{
+  "foods":[
   {
     "name": "Carrots",
     "id": 1,
@@ -77,3 +78,4 @@
     "image": "/orange juice.jpg"
   }
 ]
+}
