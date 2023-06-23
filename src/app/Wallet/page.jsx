@@ -6,11 +6,13 @@ import { GiWallet } from "react-icons/gi";
 export default function page() {
   return (
     <div className="gap-6 p-5 ">
-      <Link href="/add-money">
-        <span>
-          <MdArrowBackIosNew size={20} />
-        </span>
-      </Link>
+      <section className="border rounded-lg bg-slate-200 w-[30px]">
+        <Link href="/add-money">
+          <span>
+            <MdArrowBackIosNew size={20} />
+          </span>
+        </Link>
+      </section>
       <h1 className="text-xl font-bold ml-[40%]">Add Money </h1>
       <div className="border bg-cyan-200 p-5  gap-10 pb-8">
         <section className="flex justify-between">

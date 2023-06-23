@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-module.exports = nextConfig
 
 module.exports = {
     images: {
@@ -10,7 +8,9 @@ module.exports = {
                 hostname: 'github.com',
                 port: '',
                 pathname: '/**',
-            },
+            }
         ],
+        domains: ['source.unsplash.com']
+    
     },
 }
