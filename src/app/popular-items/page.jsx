@@ -14,7 +14,7 @@ const PopularItems = () => {
           </span>
         </Link>
       </section>
-      <FoodList foodList={object.foods} />
+      <FoodList foodList={object.food} />
     </div>
   );
 };

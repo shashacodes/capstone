@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import pics from "./favicon.ico";
 import pic from "./media/basket.png";
 import { TiLocation } from "react-icons/ti";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -19,7 +20,7 @@ import { FiPhoneCall } from "react-icons/fi";
 import { GiStarFormation } from "react-icons/gi";
 import { FiLogOut } from "react-icons/fi";
 import { IoIosPeople } from "react-icons/io";
-import { MdOutlineWorkHistory } from "react-icons/md";
+import { MdFavoriteBorder, MdOutlineWorkHistory } from "react-icons/md";
 import { MdLocalOffer } from "react-icons/md";
 import { GiChoice } from "react-icons/gi";
 import { BiMessageSquareAdd } from "react-icons/bi";
@@ -68,7 +69,7 @@ const Menu = () => {
   };
   return (
     <div className="text-[20px] mt-3">
-      <div className="flex flex-col-1 justify-between ">
+      <div className="flex flex-col-1 justify-between ml-6 mr-6">
         <div>
           <span onClick={handleMenu} className="sm:hidden cursor-pointer ">
             <BsFilterLeft size={40} />
@@ -76,7 +77,7 @@ const Menu = () => {
           <div
             className={
               menuOpen
-                ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-[#faffff] p-10 ease-in overflow-auto "
+                ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-black p-10 ease-in overflow-auto "
                 : "fixed left-[-100%] top-0 p-10 ease-in h-screen overflow-auto"
             }
           >
@@ -86,14 +87,14 @@ const Menu = () => {
               </span>
             </div>
             <div>
-              <img
-                width={300}
-                height={300}
-                src="./favicon.ico"
+              <Image
+                width={200}
+                height={250}
+                src={pics}
                 alt="icon"
-                className="border rounded-full mr-4 h-[100px] "
+                className="border rounded-full mr-4 "
               />
-              <div className="flex-col mt-8">
+              <div className="flex-col mt-8 bg-black text-white">
                 <h1 className="gap-5 text-2xl font-bold mb-5">
                   Welcome Sharon!
                 </h1>
@@ -174,11 +175,11 @@ const Menu = () => {
           </div>
         </div>
 
-        <section className="ml-[20%]">
-          <h1 className="ml-[15%]">Location</h1>
+        <section className="ml-[20%] bg-[#3D3D37] text-black">
+          <h1 className="ml-[15%] text-white">Location</h1>
           <span className="flex space-x-3">
             <TiLocation size={20} />
-            <select name="usa" id="">
+            <select name="usa" id="" className="bg-transparent">
               <option value="Nigeria">Nigeria,Lagos</option>
               <option value="Australia">Australia, Sydney</option>
               <option value="Dubai">UAE, Dubai</option>
@@ -189,7 +190,7 @@ const Menu = () => {
           </span>
         </section>
         <span className="mr-5 p-2">
-          <BsFillBellFill size={30} />
+          <BsFillBellFill size={30} style={{ color: "white" }} />
         </span>
       </div>
       <div className="border rounded-2xl justify-between  mx-auto p-4 flex">
@@ -199,11 +200,11 @@ const Menu = () => {
           name=""
           id=""
           placeholder="search food, drink, etc"
-          className="text-xl"
+          className="text-xl bg-[#3D3D37]"
           onChange={(e) => text(e.target.value)}
         />
         <span className="">
-          <LuSettings2 size={25} style={{ color: "green" }} />
+          <LuSettings2 size={25} style={{ color: "white" }} />
         </span>
       </div>
       <div className="border rounded-lg">
@@ -215,7 +216,7 @@ const Menu = () => {
             </Link>
           </section>
           <div className=" gap-3 md:max-w-[640px] max-w-[480px]">
-            <div className="flex gap-6">
+            <div className="flex gap-4">
               {categories.slice(0, 4).map((cat) => {
                 return (
                   <Link key={cat.id} href={`/categories/${cat.content}`}>
@@ -241,7 +242,7 @@ const Menu = () => {
               <h1>Deals</h1>
               <p>see all</p>
             </section>
-            <div className="grid grid-cols-2 mr-6 ml-6 border md:w-[500px] w-[300px] bg-gray-400  h-[200px] rounded-xl ">
+            <div className="grid grid-cols-2 mr-6 ml-6 border md:w-[500px] w-[300px] bg-white text-black  h-[200px] rounded-xl ">
               <h2 className="md:text-xl text-sm font-bold mx-10 mb-5 pt-5">
                 50% off <br />
                 On Grocery Combo packs
@@ -255,7 +256,7 @@ const Menu = () => {
                   height={100}
                 />{" "}
               </aside>
-              <button className="border w-[120px] h-[40px] mx-7 bg-slate-600 rounded-lg mb-10 ">
+              <button className="border w-[120px] h-[40px] mx-7 bg-green-500 rounded-lg mb-10 ">
                 order now
               </button>
             </div>
@@ -268,31 +269,46 @@ const Menu = () => {
                 <p>see all</p>
               </Link>
             </section>
-            <div className="grid grid-cols-3 gap-4 ">
+            <div className="grid grid-cols-3 gap-4 mt-3 ">
               {items.map((item) => {
                 return (
                   <div key={items.id}>
-                    <section>
-                      <Image
-                        src={item.image}
-                        width={1000}
-                        height={-1}
-                        alt="images"
-                        className="border rounded-lg"
-                      />
-                    </section>
-                    <section className=" border-t-black p-2 pt-5 md:text-xl text-sm">
-                      <p> {item.name}</p>
-                      <div className="flex">
-                        <p> {item.price}</p>
-                        <BiMessageSquareAdd
-                          size={20}
-                          color="green"
-                          onClick={() => setAmount(amount + 1)}
+                    <div className="border border-sky-200 rounded-md shadow-xl shadow-sky-200 ">
+                      <span className="flex justify-between">
+                        <Image
+                          src={item.image2}
+                          alt="img"
+                          width={80}
+                          height={20}
+                          className="mt-3"
                         />
-                        <p>{amount}</p>
-                      </div>
-                    </section>
+                        <MdFavoriteBorder
+                          className="mt-5"
+                          style={{ color: "white" }}
+                        />
+                      </span>
+                      <section>
+                        <Image
+                          src={item.image}
+                          width={1000}
+                          height={-1}
+                          alt="images"
+                          className="border rounded-lg"
+                        />
+                      </section>
+                      <section className=" border-t-black p-2 pt-5 md:text-xl text-sm">
+                        <p> {item.name}</p>
+                        <div className="flex">
+                          <p> {item.price}</p>
+                          <BiMessageSquareAdd
+                            size={20}
+                            color="green"
+                            onClick={() => setAmount(amount + 1)}
+                          />
+                          <p>{amount}</p>
+                        </div>
+                      </section>
+                    </div>
                   </div>
                 );
               })}
@@ -305,7 +321,7 @@ const Menu = () => {
               <AiFillHome size={20} /> Home
             </span>
             <span className=" gap-1">
-              <GrFavorite size={20} /> Favorite
+              <GrFavorite size={20} style={{ color: "white" }} /> Favorite
             </span>
             <Link href="/Wallet">
               <span className=" gap-1">

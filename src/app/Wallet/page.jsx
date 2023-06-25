@@ -21,7 +21,7 @@ export default function page() {
             <GiWallet size={20} />
           </span>
         </section>
-        <p className="pb-6"> ₹500.00 </p>
+        <p className="pb-6"> ₦500.00 </p>
         <Link href="/add-money">
           <button className="md:text-xl text-lg text-[14px] border ml-[15%] rounded-lg bg-green-700 md:px-32 px-20 py-4 ">
             ADD MONEY
@@ -34,11 +34,11 @@ export default function page() {
           <span className="flex justify-between">
             {" "}
             <p>Money Added To Wallet</p>
-            <p className="text-green-500"> + ₹500.00 </p>{" "}
+            <p className="text-green-500"> + ₦500.00 </p>{" "}
           </span>
           <span className="flex justify-between">
             <p>24 April| 7:30Am</p>
-            <p>Balance ₹12,000.00 </p>
+            <p>Balance ₦12,000.00 </p>
           </span>
         </section>
       </div>
@@ -48,11 +48,11 @@ export default function page() {
           <span className="flex justify-between">
             {" "}
             <p>Order Number 34234</p>
-            <p className="text-red-500"> - ₹500.00 </p>{" "}
+            <p className="text-red-500"> - ₦500.00 </p>{" "}
           </span>
           <span className="flex justify-between">
             <p>23 April| 5:30Am</p>
-            <p>Balance ₹11,250.00 </p>
+            <p>Balance ₦11,250.00 </p>
           </span>
         </section>
       </div>
@@ -62,33 +62,33 @@ export default function page() {
           <span className="flex justify-between">
             {" "}
             <p>Order No 34234</p>
-            <p className="text-red-500"> - ₹500.00 </p>{" "}
+            <p className="text-red-500"> - ₦500.00 </p>{" "}
           </span>
           <span className="flex justify-between">
             <p>22 April| 7:30Am</p>
-            <p>Balance ₹11,250.00 </p>
+            <p>Balance ₦11,250.00 </p>
           </span>
         </section>
         <section className="border rounded-xl bg-white p-5 mt-6 ">
           <span className="flex justify-between">
             {" "}
             <p>Order No 34234</p>
-            <p className="text-red-500"> - ₹500.00 </p>{" "}
+            <p className="text-red-500"> - ₦500.00 </p>{" "}
           </span>
           <span className="flex justify-between">
             <p>22 April| 7:30Am</p>
-            <p className="">Balance ₹11,250.00 </p>
+            <p className="">Balance ₦11,250.00 </p>
           </span>
         </section>
         <section className="border rounded-xl bg-white p-5 mt-6">
           <span className="flex justify-between">
             {" "}
             <p>Order No 34234</p>
-            <p className="text-red-500"> - ₹500.00 </p>{" "}
+            <p className="text-red-500"> - ₦500.00 </p>{" "}
           </span>
           <span className="flex justify-between">
             <p>22 April| 7:30Am</p>
-            <p>Balance ₹11,250.00 </p>
+            <p>Balance ₦11,250.00 </p>
           </span>
         </section>
       </div>

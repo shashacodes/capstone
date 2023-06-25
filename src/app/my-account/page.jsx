@@ -20,7 +20,7 @@ export default function page() {
       <h1 className="text-xl font-extrabold ml-[40%] pb-5">MY ACCOUNT</h1>
       <div className="md:w-[500px] w-[260px] pb-10">
         <img
-          src="/favicon.ico"
+          src="./favicon.ico"
           alt="fav"
           className="border rounded-full ml-[40%] w-[250px]"
         />
@@ -42,6 +42,7 @@ export default function page() {
             <GrFormNext />
           </span>
         </section>
+
         <section className="flex p-5">
           <span className="border bg-white rounded-xl p-3 ">
             <AiOutlineShoppingCart color="green" />
@@ -51,6 +52,7 @@ export default function page() {
             <GrFormNext />
           </span>
         </section>
+
         <section className="flex p-5">
           <span className="border bg-white rounded-xl p-3 ">
             <CiWallet color="green" />

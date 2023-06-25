@@ -5,9 +5,9 @@ import React from "react";
 import { cater } from "/src/app/object";
 import { categories } from "../object";
 
-export default function page() {
+export default function Category() {
   return (
-    <div className="p-5 gap-10 md:max-w-[640px] max-w-[480px] md:ml-3 mr-[40%]">
+    <div className="">
       <section className="border rounded-lg bg-slate-200 w-[30px]">
         <Link href="/">
           <span className="">
@@ -15,11 +15,11 @@ export default function page() {
           </span>
         </Link>
       </section>
-      <div className="grid grid-cols-3 gap-8 p-4">
+      <div className="grid grid-cols-3 gap-4">
         {categories.map((cat) => {
           return (
-            <Link key={cat.id} href={`/categories/${cat.content}`}>
-              <div className="flex flex-col gap-3 ml-8 ">
+            <Link key={cat.id} href={`/categories/${cat.slug}`}>
+              <div className="flex flex-col ml-8 ">
                 <Image
                   alt="Product Image"
                   width={600}
