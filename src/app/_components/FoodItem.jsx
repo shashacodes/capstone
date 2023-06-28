@@ -1,19 +1,25 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 import { BiMessageSquareAdd } from "react-icons/bi";
 import { BsFilterLeft } from "react-icons/bs";
 import { MdArrowBackIosNew, MdFavoriteBorder } from "react-icons/md";
 import { foods, items } from "../object";
+import Image from "next/image";
 
 const FoodItem = ({ food }) => {
   const [amount, setAmount] = useState(0);
   return (
     <div key={foods.id} className="border border-transparent mr-3  rounded-lg ">
-      <section>
-        <span className="flex">
-          <Image src={foods.image2} alt="pic" width={80} height={30} />
-          <MdFavoriteBorder />
+      <div>
+        <span className="flex justify-between">
+          <Image
+            className="mr-3"
+            alt="pic"
+            src={food.media}
+            width={70}
+            height={20}
+          />
+          <MdFavoriteBorder className="mt-4" />
         </span>
         <Image
           src={food.image}
@@ -23,7 +29,7 @@ const FoodItem = ({ food }) => {
           alt={food.name}
           className="border rounded-xl "
         />
-      </section>
+      </div>
       <section className=" border-t-black pt-5 md:text-xl text-sm">
         <p> {food.name}</p>
         <div className="flex gap-3">
@@ -37,16 +43,6 @@ const FoodItem = ({ food }) => {
         </div>
       </section>
     </div>
-    //   <div className="border rounded-lg space-x-8 ">
-    //     <section className="border rounded-lg bg-slate-200 w-[30px]">
-    //       <Link href="/">
-    //         <span className="pt-5">
-    //           <MdArrowBackIosNew size={20} />
-    //         </span>
-    //       </Link>
-    //     </section>
-    //     <FoodList foodList={object.foods} />
-    //   </div>
   );
 };
 

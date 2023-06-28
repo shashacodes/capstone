@@ -1,3 +1,5 @@
+const { sendEtagResponse } = require("next/dist/server/send-payload");
+
 module.exports =    {
   "foods":[
   {
@@ -6,7 +8,7 @@ module.exports =    {
     "price": "₦600/kg",
     "category": "vegetables",
     "image": "/carrot.png",
-    "image2": "/35.png"
+    "media": "/35.png"
   },
   {
     "name": "Broccoli",
@@ -14,7 +16,7 @@ module.exports =    {
     "price": "₦900/kg",
     "category": "vegetables",
     "image": "/broccoli.jpg",
-    "image2": "/20.png"
+    "media": "/20.png"
   },
   {
     "name": "Tomatoes",
@@ -22,7 +24,7 @@ module.exports =    {
     "price": "₦500/kg",
     "category": "vegetables",
     "image": "/tomatoes.jpg",
-    "image2": "/10.png"
+    "media": "/10.png"
   },
   {
     "name": "Apples",
@@ -30,7 +32,7 @@ module.exports =    {
     "price": "₦250/kg",
     "category": "fruits",
     "image": "/apple.jpg",
-    "image2": "/20.png"
+    "media": "/20.png"
   },
   {
     "name": "Bananas",
@@ -38,7 +40,7 @@ module.exports =    {
     "price": "₦700/kg",
     "category": "fruits",
     "image": "/banana.jpg",
-    "image2": "/35.png"
+    "media": "/35.png"
   },
   {
     "name": "Oranges",
@@ -46,7 +48,7 @@ module.exports =    {
     "price": "₦220/kg",
     "category": "fruits",
     "image": "/oranges.jpg",
-    "image2": "/30.png"
+    "media": "/30.png"
   },
   {
     "name": "Chicken",
@@ -54,7 +56,7 @@ module.exports =    {
     "price": "₦1750/kg",
     "category": "meat",
     "image": "/chicken.jpg",
-    "image2": "/10.png"
+    "media": "/10.png"
   },
   {
     "name": "Beef",
@@ -62,7 +64,7 @@ module.exports =    {
     "price": "₦1100/kg",
     "category": "meat",
     "image": "/beef.jpg",
-    "image2": "/20.png"
+    "media": "/20.png"
   },
   {
     "name": "Pork",
@@ -70,7 +72,7 @@ module.exports =    {
     "price": "₦950/kg",
     "category": "meat",
     "image": "/pork.jpg",
-    "image2": "/35.png"
+    "media": "/35.png"
   },
   {
     "name": "Cola",
@@ -78,7 +80,7 @@ module.exports =    {
     "price": "₦250/kg",
     "category": "drinks",
     "image": "/coke.png",
-    "image2": "/10.png"
+    "media": "/10.png"
   },
   {
     "name": "Orange Juice",
@@ -86,7 +88,7 @@ module.exports =    {
     "price": "₦800/kg",
     "category": "drinks",
     "image": "/orange juice.jpg",
-    "image2": "/20.png"
+    "media": "/20.png"
   }
   ],
     "categories": [
@@ -94,7 +96,7 @@ module.exports =    {
         "id": 1,
         "name": "Vegetables",
         "description": "Fresh and organic vegetables.",
-        "imageUrl": "https://source.unsplash.com/400x300/?vegetables",
+        "imageUrl": "https://o.remove.bg/downloads/52f71af4-21b7-48e4-9f32-ba65682acc0d/vegg__1_-removebg-preview.png",
         "slug": "vegetables",
         "products": [
           {
@@ -102,70 +104,70 @@ module.exports =    {
             "name": "Carrots",
             "description": "Sweet and crunchy carrots.",
             "price": "₦310",
-            "image": "https://source.unsplash.com/400x300/?carrots"
+            "image": "https://o.remove.bg/downloads/ba1c5ba0-acf1-4e13-95e2-010d85b661ca/carrot-removebg-preview.png"
           },
           {
             "id": 2,
             "name": "Tomatoes",
             "description": "Juicy and ripe tomatoes.",
             "price": "₦290",
-            "image": "https://source.unsplash.com/400x300/?tomatoes"
+            "image": "https://media.istockphoto.com/id/489669074/photo/cherry-tomatoes.webp?b=1&s=170667a&w=0&k=20&c=Hsp7mlwxn1uyORD3V7Ba93XY2VyQ-txI8VIizhOFRno="
           },
           {
             "id": 3,
             "name": "Broccoli",
             "description": "Nutritious and tender broccoli florets.",
             "price": "₦350",
-            "image": "https://source.unsplash.com/400x300/?broccoli"
+            "image": "https://o.remove.bg/downloads/3f62a9a3-9930-4c23-a528-0d298c48d1df/broccoli-removebg-preview.png"
           },
           {
             "id": 4,
             "name": "Spinach",
             "description": "Leafy and vibrant spinach leaves.",
             "price": "₦330",
-            "image": "https://source.unsplash.com/400x300/?spinach"
+            "image": "https://o.remove.bg/downloads/ac2a512d-5aaa-4581-9436-6ecf9e152723/download-removebg-preview.png"
           },
           {
             "id": 5,
             "name": "Bell Peppers",
             "description": "Colorful and crisp bell peppers.",
             "price": "₦370",
-            "image": "https://source.unsplash.com/400x300/?bellpeppers"
+            "image": "https://o.remove.bg/downloads/008a3e4e-6117-4cd4-a239-08661c058486/images-removebg-preview.png"
           },
           {
             "id": 6,
             "name": "Cucumbers",
             "description": "Cool and refreshing cucumbers.",
             "price": "₦320",
-            "image": "https://source.unsplash.com/400x300/?cucumbers"
+            "image": "https://o.remove.bg/downloads/9e18a461-e663-4a33-aa95-a3a0035ec4c0/download-removebg-preview.png"
           },
           {
             "id": 7,
             "name": "Onions",
             "description": "Versatile and aromatic onions.",
             "price": "₦300",
-            "image": "https://source.unsplash.com/400x300/?onions"
+            "image": "https://o.remove.bg/downloads/9307f7ac-8da6-454d-933d-87893e19d539/download-removebg-preview.png"
           },
           {
             "id": 8,
             "name": "Potatoes",
             "description": "Starchy and versatile potatoes.",
             "price": "₦340",
-            "image": "https://source.unsplash.com/400x300/?potatoes"
+            "image": "https://o.remove.bg/downloads/c1940abf-c387-4db7-aa7d-cfb2ca6f431c/download-removebg-preview.png"
           },
           {
             "id": 9,
             "name": "Lettuce",
             "description": "Crisp and fresh lettuce leaves.",
             "price": "₦330",
-            "image": "https://source.unsplash.com/400x300/?lettuce"
+            "image": "https://o.remove.bg/downloads/acc6a81d-e493-4750-8ce0-19f2a3bc8ef5/download-removebg-preview.png"
           },
           {
             "id": 10,
             "name": "Zucchini",
             "description": "Mild and tender zucchini.",
             "price": "₦350",
-            "image": "https://source.unsplash.com/400x300/?zucchini"
+            "image": "https://o.remove.bg/downloads/e70ba300-c230-4f06-a273-25916521c653/download-removebg-preview.png"
           }
         ]
       },
@@ -173,7 +175,7 @@ module.exports =    {
         "id": 2,
         "name": "Fruits",
         "description": "Juicy and flavorful fruits.",
-        "imageUrl": "https://source.unsplash.com/400x300/?fruits",
+        "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7naORqBnG0E9dIQCRnQDqYRrWPGoXodO4bw&usqp=CAU",
         "slug": "fruits",
         "products": [
           {
@@ -181,70 +183,71 @@ module.exports =    {
             "name": "Apples",
             "description": "Crisp and sweet apples.",
             "price": "₦480",
-            "image": "https://source.unsplash.com/400x300/?apples"
+            "image": "https://o.remove.bg/downloads/dbce9c92-e4a3-4561-bd05-dd4c7688a2b9/images-removebg-preview.png"
           },
           {
             "id": 2,
             "name": "Bananas",
             "description": "Creamy and nutritious bananas.",
             "price": "₦420",
-            "image": "https://source.unsplash.com/400x300/?bananas"
+            "image": "https://o.remove.bg/downloads/0b8e4d26-cc86-4ac5-b049-c676fed440b9/download-removebg-preview.png"
           },
           {
             "id": 3,
             "name": "Oranges",
             "description": "Citrusy and refreshing oranges.",
             "price": "₦450",
-            "image": "https://source.unsplash.com/400x300/?oranges"
+            "image": "https://o.remove.bg/downloads/6205ee53-0d4f-44be-928f-af305e0f47dc/download-removebg-preview.png"
           },
           {
             "id": 4,
             "name": "Strawberries",
             "description": "Sweet and juicy strawberries.",
             "price": "₦550",
-            "image": "https://source.unsplash.com/400x300/?strawberries"
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT22u6mZWijd4uK8qvNdmy74EwV2GJ5ux83yg&usqp=CAU"
           },
           {
             "id": 5,
             "name": "Grapes",
             "description": "Plump and flavorful grapes.",
             "price": "₦590",
-            "image": "https://source.unsplash.com/400x300/?grapes"
+            "image": "https://o.remove.bg/downloads/cfdc6ae3-d128-4f49-8fea-491b752dd1c7/download-removebg-preview.png"
+
           },
           {
             "id": 6,
             "name": "Mangoes",
             "description": "Tropical and succulent mangoes.",
             "price": "₦670",
-            "image": "https://source.unsplash.com/400x300/?mangoes"
+            "image":"https://o.remove.bg/downloads/7e9b83c1-2bbf-44b6-9da5-0f5c21808cd5/download-removebg-preview.png"
           },
           {
             "id": 7,
             "name": "Pineapples",
             "description": "Sweet and tangy pineapples.",
             "price": "₦620",
-            "image": "https://source.unsplash.com/400x300/?pineapples"
+            "image": "https://o.remove.bg/downloads/0774950d-ae3d-4ca3-b8ec-8da505121f78/download-removebg-preview.png"
           },
           {
             "id": 8,
             "name": "Watermelons",
             "description": "Juicy and hydrating watermelons.",
             "price": "₦520",
-            "image": "https://source.unsplash.com/400x300/?watermelons"
+            "image": "https://o.remove.bg/downloads/d5ec373d-f057-4c17-adc6-1bb0f1caf45c/download-removebg-preview.png"
           },
           {
             "id": 9,
             "name": "Blueberries",
             "description": "Small and antioxidant-rich blueberries.",
             "price": "₦680",
-            "image": "https://source.unsplash.com/400x300/?blueberries"
+            "image": "https://o.remove.bg/downloads/eb89c6ec-d7e7-4fca-ae8c-19f4b23fd995/download-removebg-preview.png"
           },
           {
             "id": 10,
             "name": "Peaches",
             "description": "Soft and fragrant peaches.",
             "price": "₦530",
-            "image": "https://source.unsplash.com/400x300/?peaches"
+            "image": "https://o.remove.bg/downloads/8603b4ca-11a9-4bbc-a2d5-c7ed4366c348/images-removebg-preview.png"
           }
         ]
       },
@@ -1065,6 +1068,98 @@ module.exports =    {
     "image": "/tomatoes.jpg",
     "image2": "/10.png"
   },
-]
+  {
+    "name": "Apples",
+    "id": 4,
+    "price": "₦250/kg",
+    "category": "fruits",
+    "image": "/apple.jpg",
+    "media": "/20.png"
+  },
+  {
+    "name": "Bananas",
+    "id": 5,
+    "price": "₦700/kg",
+    "category": "fruits",
+    "image": "/banana.jpg",
+    "media": "/35.png"
+  },
+],
+  "deals": [
+    {
+      "name": "Combo Deal 1",
+      "items": [
+        { "name": "Apples:", "quantity": 5 },
+        { "name": "Oranges:", "quantity": 3 },
+        { "name": "Bananas:", "quantity": 5 }
+      ],
+      "price": "₦1,000",
+      "image_url": "https://o.remove.bg/downloads/32071629-bbd0-4501-8440-b10fefc5cb47/download-removebg-preview-removebg-preview.png"
+    },
+    {
+      "name": "Combo Deal 2",
+      "items": [
+        { "name": "Milk:", "quantity": 1 },
+        { "name": "Cereal:", "quantity": 1 },
+        { "name": "Bread:", "quantity": 2 }
+      ],
+      "price": "₦1,500",
+      "image_url": "https://o.remove.bg/downloads/3a48f2ea-4d90-4422-a39e-80e712d791c2/download-removebg-preview.png"
+    },
+    {
+      "name": "Combo Deal 3",
+      "items": [
+        { "name": "Chicken:", "quantity": 2 },
+        { "name": "Carrot:", "quantity": 3 },
+        { "name": "Potatoes:", "quantity": 3 },
+        { "name": "Broccoli:", "quantity": 1 }
+      ],
+      "price": "₦2,000",
+      "image_url": "https://o.remove.bg/downloads/4df92200-51da-4a0e-9760-f25c38069290/images-removebg-preview.png"
+    },
+    {
+      "name": "Combo Deal 4",
+      "items": [
+        { "name": "Juice:", "quantity": 4 },
+        { "name": "Soda:", "quantity": 5 },
+        { "name": "water:", "quantity": 3 },
+        { "name": "coffee:", "quantity": 2 },
+      ],
+      "price": "₦2,000",
+      "image_url": "https://o.remove.bg/downloads/111be4b5-9559-4948-ad42-7fd3c426dd3e/images-removebg-preview.png"
+    },
+    {
+      "name": "Combo Deal 4",
+      "items": [
+        { "name": "strawberry flavor:", "quantity": 1 },
+        { "name": "chocolate flavor:", "quantity": 1 },
+        { "name": "vanilla flavor:", "quantity": 1 },
+        { "name": "coconut-flavor:", "quantity": 1 },
+      ],
+      "price": "₦2,000",
+      "image_url": "https://o.remove.bg/downloads/6edcac7b-5caf-4b04-bc45-c1c9fb6562de/download-removebg-preview.png"
+    },
+    {
+      "name": "Combo Deal 5",
+      "items": [
+        { "name": "cookies:", "quantity": 2 },
+        { "name": "biscuits:", "quantity": 2 },
+        { "name": "short-bread:", "quantity": 2 },
+      ],
+      "price": "₦2,000",
+      "image_url": "https://o.remove.bg/downloads/eaea5374-f2b1-49fe-b2b7-a2410f2f9ba7/images-removebg-preview.png"
+    },
+    {
+      "name": "Combo Deal 5",
+      "items": [
+        { "name": "cup-cakes:", "quantity": 6 },
+        { "name": "4-inch cake:", "quantity": 1 },
+        { "name": "coconut-bread:", "quantity": 1 },
+        { "name": "milk-bread:", "quantity": 1 },
+      ],
+      "price": "₦10,000",
+      "image_url": "https://o.remove.bg/downloads/2800f0de-cc9e-4b5c-9d63-aba901e068c5/images-removebg-preview.png"
+    }
+  ]
 
 }

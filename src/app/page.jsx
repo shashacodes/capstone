@@ -33,40 +33,31 @@ import { categories, foods, items } from "./object";
 import FoodList from "./_components/FoodList";
 import PopularItems from "./popular-items/page";
 import FoodStuff from "./_components/FoodStuff";
+import Category from "./categories/page";
+import Slider from "./_components/Slider";
 
 const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [amount, setAmount] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredItems, setFilteredItems] = useState([]);
 
   const handleMenu = () => {
     setMenuOpen(!menuOpen);
     return Menu;
   };
-  const FoodItem = () => {
-    return FoodItem;
-  };
-
-  const [searchValue, setSearchValue] = useState("");
-  const [filteredResult, setFilterResult] = useState([]);
-
   const text = (e) => {
     setSearchValue(e);
     console.log(searchValue);
 
     if (searchValue !== "") {
-      const filteredData = categories.product.filter((item) => {
-        return Object.values(item)
-          .join("")
-          .toLowerCase()
-          .includes(searchValue.toLowerCase());
-      });
-      console.log(filteredData);
-      setFilterResult(filteredData);
-    } else {
-      setFilterResult(categories);
-      console.log("not found");
+      const filteredData = d;
     }
   };
+  const FoodItem = () => {
+    return FoodItem;
+  };
+
   return (
     <div className="text-[20px] mt-3">
       <div className="flex flex-col-1 justify-between ml-6 mr-6">
@@ -77,7 +68,7 @@ const Menu = () => {
           <div
             className={
               menuOpen
-                ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-black p-10 ease-in overflow-auto "
+                ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-[#626260] p-10 ease-in overflow-auto "
                 : "fixed left-[-100%] top-0 p-10 ease-in h-screen overflow-auto"
             }
           >
@@ -94,7 +85,7 @@ const Menu = () => {
                 alt="icon"
                 className="border rounded-full mr-4 "
               />
-              <div className="flex-col mt-8 bg-black text-white">
+              <div className="flex-col mt-8 bg-[#626260] text-white">
                 <h1 className="gap-5 text-2xl font-bold mb-5">
                   Welcome Sharon!
                 </h1>
@@ -193,21 +184,20 @@ const Menu = () => {
           <BsFillBellFill size={30} style={{ color: "white" }} />
         </span>
       </div>
-      <div className="border rounded-2xl justify-between  mx-auto p-4 flex">
+      <div className="border border-[#626260] rounded-2xl justify-between  mx-auto p-4 flex">
         <BsSearch size={20} className="mr-3" />
         <input
           type="text"
-          name=""
-          id=""
           placeholder="search food, drink, etc"
           className="text-xl bg-[#3D3D37]"
-          onChange={(e) => text(e.target.value)}
+          value={searchValue}
+          onChange={text}
         />
         <span className="">
           <LuSettings2 size={25} style={{ color: "white" }} />
         </span>
       </div>
-      <div className="border rounded-lg">
+      <div className="border border-[#626260]  rounded-lg">
         <div className="ml-6 mr-6 mt-10">
           <section className="flex justify-between">
             <h1>Categories</h1>
@@ -240,7 +230,9 @@ const Menu = () => {
           <div className="ml-6 mr-6 mt-10">
             <section className="flex justify-between ">
               <h1>Deals</h1>
-              <p>see all</p>
+              <Link href="/Deals">
+                <p>see all</p>
+              </Link>
             </section>
             <div className="grid grid-cols-2 mr-6 ml-6 border md:w-[500px] w-[300px] bg-white text-black  h-[200px] rounded-xl ">
               <h2 className="md:text-xl text-sm font-bold mx-10 mb-5 pt-5">
@@ -269,49 +261,8 @@ const Menu = () => {
                 <p>see all</p>
               </Link>
             </section>
-            <div className="grid grid-cols-3 gap-4 mt-3 ">
-              {items.map((item) => {
-                return (
-                  <div key={items.id}>
-                    <div className="border border-sky-200 rounded-md shadow-xl shadow-sky-200 ">
-                      <span className="flex justify-between">
-                        <Image
-                          src={item.image2}
-                          alt="img"
-                          width={80}
-                          height={20}
-                          className="mt-3"
-                        />
-                        <MdFavoriteBorder
-                          className="mt-5"
-                          style={{ color: "white" }}
-                        />
-                      </span>
-                      <section>
-                        <Image
-                          src={item.image}
-                          width={1000}
-                          height={-1}
-                          alt="images"
-                          className="border rounded-lg"
-                        />
-                      </section>
-                      <section className=" border-t-black p-2 pt-5 md:text-xl text-sm">
-                        <p> {item.name}</p>
-                        <div className="flex">
-                          <p> {item.price}</p>
-                          <BiMessageSquareAdd
-                            size={20}
-                            color="green"
-                            onClick={() => setAmount(amount + 1)}
-                          />
-                          <p>{amount}</p>
-                        </div>
-                      </section>
-                    </div>
-                  </div>
-                );
-              })}
+            <div className="gap-4">
+              <Slider slides={FoodStuff} />
             </div>
           </div>
         </div>
