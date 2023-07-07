@@ -2,9 +2,13 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import "swiper/css";
-import { Navigation, Pagination, Scrollbar } from "swiper";
+import "swiper/css/bundle";
+import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper";
 import { BiMessageSquareAdd } from "react-icons/bi";
+import Button from "./Button";
+import { MdFavoriteBorder } from "react-icons/md";
+import Link from "next/link";
+import Fav from "./Favorite";
 
 const popular = [
   {
@@ -37,7 +41,7 @@ const popular = [
     price: "₦250/kg",
     category: "fruits",
     image: "/apple.jpg",
-    media: "/20.png",
+    image2: "/20.png",
   },
   {
     name: "Bananas",
@@ -45,38 +49,50 @@ const popular = [
     price: "₦700/kg",
     category: "fruits",
     image: "/banana.jpg",
-    media: "/35.png",
+    image2: "/35.png",
   },
 ];
 export default function Slider() {
-  const [amount, setAmount] = useState(0);
+  // const [cartItems, setCartItems] = useState([]);
+  // const addToCart = (item) => {
+  //   const updatedCartItems = [...cartItems, item];
+  //   setCartItems(updatedCartItems);
+  //   localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+  // };
   const data = popular.map((pop) => (
-    <SwiperSlide
-      key={pop.id}
-      className="h-52 border border-[#626260] rounded-md text-base"
-    >
-      <div className="border rounded-md border-[#626260] ">
-        <Image src={pop.image} alt="pics" width={1000} height={-1} />
-      </div>
-      <section>
-        {pop.name}
-        <section className="flex gap-3">
-          <p> {pop.price}</p>
-          <BiMessageSquareAdd
-            size={20}
-            color="green"
-            onClick={() => setAmount(amount + 1)}
-          />
-          <p>{amount}</p>
+    <SwiperSlide key={pop.id} className=" space-x-10 p-4 text-base mt-3">
+      <div className="border space-x-10 w-[150px] border-[#626260] shadow-xl shadow-gray-600 gap-10 ">
+        <div className="mb-4 border-b-[#626260] ">
+          <span className="flex justify-between">
+            <Image
+              className="mr-3"
+              alt="pic"
+              src={pop.image2}
+              width={70}
+              height={20}
+            />
+            <Fav id={pop} />
+          </span>
+          <Image src={pop.image} alt="pics" width={800} height={-1} />
+        </div>
+        <section className="w-15">
+          <section>
+            <p>{pop.name}</p>
+            <p className="mr-6"> {pop.price}</p>
+          </section>
+          <Button item={pop} />
         </section>
-      </section>
+      </div>
     </SwiperSlide>
   ));
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar]}
-      spaceBetween={50}
-      slidesPerView={3}
+      className="mb-4"
+      modules={[Pagination, Navigation, Autoplay, Scrollbar]}
+      spaceBetween={70}
+      slidesPerView={2}
+      autoplay={{ delay: 3000 }}
+      loop
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}

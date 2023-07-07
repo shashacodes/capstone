@@ -42,49 +42,49 @@ export default function Page() {
         </div>
         <section className="mt-5 grid grid-cols-4 gap-5">
           <button
-            className="border rounded-md p-2 w-[85px] hover:bg-white border-[#626260] hover:text-black"
+            className="border rounded-md p-2 w-[85px] border-[#626260] hover:text-black"
             onClick={() => handleButtonClick(100)}
           >
             + ₦100
           </button>
           <button
-            className="border rounded-md p-2 w-[85px] hover:bg-white border-[#626260] hover:text-black"
+            className="border rounded-md p-2 w-[85px] border-[#626260] hover:text-black"
             onClick={() => handleButtonClick(200)}
           >
             + ₦200
           </button>
           <button
-            className="border rounded-md p-2 w-[85px] hover:bg-white border-[#626260] hover:text-black"
+            className="border rounded-md p-2 w-[85px] border-[#626260] hover:text-black"
             onClick={() => handleButtonClick(500)}
           >
             + ₦500
           </button>
           <button
-            className="border rounded-md p-2 w-[85px] hover:bg-white border-[#626260] hover:text-black"
+            className="border rounded-md p-2 w-[85px] border-[#626260] hover:text-black"
             onClick={() => handleButtonClick(1000)}
           >
             + ₦1000
           </button>
           <button
-            className="border rounded-md p-2 w-[85px] hover:bg-white border-[#626260] hover:text-black"
+            className="border rounded-md p-2 w-[85px] border-[#626260] hover:text-black"
             onClick={() => handleButtonClick(2000)}
           >
             + ₦2000
           </button>
           <button
-            className="border rounded-md p-2 w-[85px] hover:bg-white border-[#626260] hover:text-black"
+            className="border rounded-md p-2 w-[85px] border-[#626260] hover:text-black"
             onClick={() => handleButtonClick(3000)}
           >
             + ₦3000
           </button>
           <button
-            className="border rounded-md p-2 w-[85px] hover:bg-white border-[#626260] hover:text-black"
+            className="border rounded-md p-2 w-[85px] border-[#626260] hover:text-black"
             onClick={() => handleButtonClick(4000)}
           >
             + ₦4000
           </button>
           <button
-            className="border rounded-md p-2 w-[85px] hover:bg-white border-[#626260] hover:text-black"
+            className="border rounded-md p-2 w-[85px] border-[#626260] hover:text-black"
             onClick={() => handleButtonClick(5000)}
           >
             + ₦5000
@@ -97,7 +97,7 @@ export default function Page() {
         ></input>
         <button
           onClick={handleAddMoney}
-          className="md:text-xl text mt-8 bg-green-600 text-black w-[370px] p-3 hover:bg-white hover:text-black"
+          className="md:text-xl text mt-8 bg-green-600 text-black w-[370px] p-3 hover:text-black"
         >
           Add Money
         </button>

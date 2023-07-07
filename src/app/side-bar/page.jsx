@@ -9,6 +9,7 @@ import { MdOutlineWorkHistory } from "react-icons/md";
 import { MdLocalOffer } from "react-icons/md";
 import { GiChoice } from "react-icons/gi";
 import Link from "next/link";
+
 export default function page() {
   return (
     <div className="p-6">

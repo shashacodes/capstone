@@ -7,6 +7,7 @@ import { LuLanguages } from "react-icons/lu";
 import { MdArrowBackIosNew, MdOutlineEditNote } from "react-icons/md";
 import { RiLockPasswordLine, RiWallet3Fill } from "react-icons/ri";
 import Link from "next/link";
+
 export default function page() {
   return (
     <div className="flex flex-col h-full md:text-xl text-sm text-[20px] border border-[#626260] rounded-lg p-5">
