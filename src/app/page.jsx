@@ -998,7 +998,7 @@ const Menu = () => {
           </div>
         </div>
         <footer className="ml-6 mr-6 mt-16 ">
-          <div className="flex justify-between  p-2 mt-6 border rounded-lg bg-gray-500 fixed bottom-0 left-0 sm:max-w-[480px] space-x-8 gap-6 md:text-xl text-sm">
+          <div className="flex justify-between  p-2 mt-6 border rounded-lg bg-gray-500 fixed bottom-0 left-0 md:max-w-[500px] sm:max-w-[480px] space-x-8 gap-6 md:text-xl text-sm">
             <span className="gap-1 ">
               <AiFillHome size={20} /> Home
             </span>
