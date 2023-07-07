@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { MdArrowBackIosNew } from "react-icons/md";
 import Link from "next/link";

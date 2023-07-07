@@ -33,7 +33,6 @@ import object, { categories, foods, items } from "./object";
 import FoodList from "./_components/FoodList";
 import PopularItems from "./popular-items/page";
 import FoodStuff from "./_components/FoodStuff";
-import Category from "./categories/page";
 import Slider from "./_components/Slider";
 import Button from "./_components/Button";
 import SearchBar from "./_components/Search";
