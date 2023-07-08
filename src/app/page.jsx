@@ -805,7 +805,7 @@ const Menu = () => {
           <div
             className={
               menuOpen
-                ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-[#626260] p-10 ease-in overflow-auto "
+                ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-[#626260] p-10 ease-in overflow-auto z-50"
                 : "fixed left-[-100%] top-0 p-10 ease-in h-screen "
             }
           >
@@ -903,11 +903,11 @@ const Menu = () => {
           </div>
         </div>
 
-        <section className="ml-[20%] bg-[#3D3D37] text-black">
-          <h1 className="ml-[15%] text-white">Location</h1>
+        <section className="ml-[20%] bg-inherit text-black">
+          <h1 className="ml-[15%] text-white font-bold">Location</h1>
           <span className="flex">
             <TiLocation size={20} />
-            <select name="usa" id="" className="bg-transparent mr-6">
+            <select name="usa" id="" className="bg-transparent font-bold mr-6">
               <option value="Nigeria">Nigeria,Lagos</option>
               <option value="Australia">Australia, Sydney</option>
               <option value="Dubai">UAE, Dubai</option>
@@ -926,7 +926,7 @@ const Menu = () => {
           <SearchBar data={newCat} />
         </div>
       </div>
-      <div className="border border-[#626260] md:text-lg text-sm  rounded-lg">
+      <div className="border border-[#626260] md:text-lg text-sm font-bold rounded-lg">
         <div className="ml-6 mr-6 mt-10">
           <section className="flex justify-between mb-2">
             <h1>Categories</h1>

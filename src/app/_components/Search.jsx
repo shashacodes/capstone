@@ -45,20 +45,29 @@ const SearchBar = ({ data }) => {
   return (
     <div className="cursor-pointer">
       <div className="flex sm:text-sm justify-center items-center">
-        <BsSearch size={24} className="mr-3" />
         <form onSubmit={handleFormSubmit} action="search">
-          <input
-            type="search"
-            value={searchList}
-            onChange={handleSearch}
-            placeholder="Search..."
-            className="border border-[#626260]  mx-auto bg-transparent text-white rounded-md p-2 mr-2 justify-center"
-          />
+          <div className="relative">
+            <input
+              type="search"
+              value={searchList}
+              onChange={handleSearch}
+              placeholder="Search..."
+              className="border border-[#626260] bg-transparent text-white rounded-md p-2 pl-10"
+            />
+            <BsSearch
+              size={24}
+              className="absolute left-3 top-1/2 p-1 transform -translate-y-1/2 "
+            />
+          </div>
+          <button type="submit" className="hidden">
+            Submit
+          </button>
         </form>
         <span className="border rounded-md bg-gray-500 p-2">
           <LuSettings2 size={25} style={{ color: "white" }} />
         </span>{" "}
       </div>
+
       <div className="relative">
         <ul className="ml-3 grid grid-cols-2 gap-2 mt-5">
           {searchResults.length === 0 ? (

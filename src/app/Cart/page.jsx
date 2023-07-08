@@ -8,7 +8,7 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 const Cart = () => {
   const { cartItems, calculateTotalPrice, removeFromCart, clearCart } =
     useCart();
-
+  const totalPrice = calculateTotalPrice();
   return (
     <div>
       <span className="flex justify-center mt-3">
@@ -40,7 +40,7 @@ const Cart = () => {
         </ul>
       )}
       <div className="text-center mt-4">
-        <h3>Total Price: ₦{calculateTotalPrice()}</h3>
+        <h3>Total Price: ₦{totalPrice}</h3>
       </div>
       <Link href="/">
         <button className="bg-green-500 hover:bg-green-700 rounded-lg p-2">

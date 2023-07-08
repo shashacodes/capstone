@@ -16,6 +16,7 @@ export const useCart = () => {
   const isItemInCart = (item) => {
     return cartItems.includes(item);
   };
+
   const calculateTotalPrice = () => {
     if (cartItems.length === 0) {
       return 0;
