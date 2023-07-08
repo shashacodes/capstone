@@ -36,6 +36,7 @@ import FoodStuff from "./_components/FoodStuff";
 import Slider from "./_components/Slider";
 import Button from "./_components/Button";
 import SearchBar from "./_components/Search";
+import Footer from "./_components/Footer";
 const newCat = [
   {
     id: 1,
@@ -997,33 +998,7 @@ const Menu = () => {
             </div>
           </div>
         </div>
-        <footer className=" mb-[25%]">
-          <ul className="flex md:gap-8 space-x-10 gap-3 p-2 mt-6 border z-50 rounded-lg bg-gray-500 fixed bottom-0 md:text-xl text-sm">
-            <li className="md:px-1">
-              <AiFillHome size={20} /> Home
-            </li>
-            <Link href="/Fav">
-              <li className="md:px-1">
-                <GrFavorite size={20} style={{ color: "red" }} /> Favorite
-              </li>
-            </Link>
-            <Link href="/Wallet">
-              <li className="md:px-1">
-                <GiWallet size={25} /> Wallet
-              </li>
-            </Link>
-            <Link href="/Cart">
-              <li className="md:px-1">
-                <FiShoppingCart size={20} /> Orders
-              </li>
-            </Link>
-            <Link href="/my-account">
-              <li className="md:px-1">
-                <BsPerson size={25} /> Profile
-              </li>
-            </Link>
-          </ul>
-        </footer>
+        <Footer />
       </div>
     </div>
   );
