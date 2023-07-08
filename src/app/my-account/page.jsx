@@ -32,7 +32,7 @@ export default function page() {
         </h1>
       </div>
       <div className="border bg-green-800 border-[#626260] rounded-t-lg mt-5">
-        <h2 className="md:texttext-2xl text-sm font-extrabold p-5">
+        <h2 className="md:text-2xl text-sm font-extrabold p-5">
           Account overview
         </h2>
         <section className="flex p-5">
