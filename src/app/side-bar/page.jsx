@@ -53,8 +53,8 @@ export default function page() {
             Refer & Earn
           </h2>
         </section>
-        <section className="">
-          <Link href="/Contact-us">
+        <Link href="/Contact-us">
+          <section className="">
             <h2 className="flex gap-6 mb-5">
               <span>
                 {" "}
@@ -62,17 +62,19 @@ export default function page() {
               </span>
               Contact Us
             </h2>{" "}
-          </Link>
-        </section>
-        <section className="">
-          <h2 className="flex gap-6 mb-5">
-            <span>
-              {" "}
-              <TbHelpHexagon size={30} />{" "}
-            </span>
-            Help Center
-          </h2>
-        </section>
+          </section>
+        </Link>
+        <Link href="/help-centre">
+          <section className="">
+            <h2 className="flex gap-6 mb-5">
+              <span>
+                {" "}
+                <TbHelpHexagon size={30} />{" "}
+              </span>
+              Help Center
+            </h2>
+          </section>
+        </Link>
         <section className="">
           <h2 className="flex gap-6 mb-5">
             <span>

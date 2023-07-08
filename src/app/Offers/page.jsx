@@ -9,7 +9,7 @@ export default function page() {
         width={100}
         height={100}
         alt="image"
-        className="rounded-xl mx-auto mt-4"
+        className="rounded-xl mx-auto mt-4 animate-pulse"
       />
       <h2 className="mt-3 font-extrabold text-xl mb-4">
         At sharon's groceries, we offer:
