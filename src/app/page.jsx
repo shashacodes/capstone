@@ -799,9 +799,9 @@ const Menu = () => {
     <div className="text-[20px] mt-3">
       <div className="flex flex-col-1 justify-between ml-6 mr-6">
         <div>
-          <span onClick={handleMenu} className="sm:hidden cursor-pointer ">
+          <li onClick={handleMenu} className="sm:hidden cursor-pointer ">
             <BsFilterLeft size={40} />
-          </span>{" "}
+          </li>{" "}
           <div
             className={
               menuOpen
@@ -963,7 +963,7 @@ const Menu = () => {
                 <p className="animate-pulse font-bold">see all</p>
               </Link>
             </section>
-            <div className="grid grid-cols-2 mr-6 ml-6 border md:w-[500px] w-[300px] bg-white text-black  h-[200px] rounded-xl ">
+            <div className="grid grid-cols-2 mr-6 ml-6 border md:w-[500px] w-[300px] bg-white text-black rounded-xl ">
               <h2 className="md:text-xl text-md font-bold mx-10 mb-5 pt-5">
                 50% off <br />
                 On Grocery Combo packs
@@ -978,7 +978,7 @@ const Menu = () => {
                 />{" "}
               </aside>
               <Link href="/Deals">
-                <button className="bg-green-500 hover:bg-[#626260] border rounded-md p-1 ml-6 mb-6 w-[150px] font-bold">
+                <button className="bg-green-500 hover:bg-[#626260] border rounded-md  ml-6 md:mb-1 mb-6 w-[150px] font-bold">
                   Order now
                 </button>
               </Link>
@@ -997,32 +997,32 @@ const Menu = () => {
             </div>
           </div>
         </div>
-        <footer className="ml-6 mr-6 mt-16 ">
-          <div className="flex justify-between  p-2 mt-6 border rounded-lg bg-gray-500 fixed bottom-0 left-0 md:max-w-[500px] sm:max-w-[480px] space-x-8 gap-6 md:text-xl text-sm">
-            <span className="gap-1 ">
+        <footer className=" mb-[25%]">
+          <ul className="flex md:gap-8 space-x-10 gap-3 p-2 mt-6 border rounded-lg bg-gray-500 fixed bottom-0 md:text-xl text-sm">
+            <li className="md:px-4">
               <AiFillHome size={20} /> Home
-            </span>
+            </li>
             <Link href="/Fav">
-              <span className=" gap-1">
+              <li className="md:px-4">
                 <GrFavorite size={20} style={{ color: "red" }} /> Favorite
-              </span>
+              </li>
             </Link>
             <Link href="/Wallet">
-              <span className=" gap-1">
+              <li className="md:px-4">
                 <GiWallet size={25} /> Wallet
-              </span>
+              </li>
             </Link>
             <Link href="/Cart">
-              <span className="gap-1">
+              <li className="md:px-4">
                 <FiShoppingCart size={20} /> Orders
-              </span>
+              </li>
             </Link>
             <Link href="/my-account">
-              <span className=" gap-1">
+              <li className="md:px-6">
                 <BsPerson size={25} /> Profile
-              </span>
+              </li>
             </Link>
-          </div>
+          </ul>
         </footer>
       </div>
     </div>

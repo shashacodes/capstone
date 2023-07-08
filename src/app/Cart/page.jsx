@@ -27,6 +27,7 @@ const Cart = () => {
             <div key={index}>
               <Image src={item.image} width={150} height={100} alt="image" />
               <li>{item.name}</li>
+              <li>{item.description}</li>
               <li>{item.price}</li>
               <button
                 className="bg-red-500 hover:bg-red-700 rounded-lg p-2 mt-2"
