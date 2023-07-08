@@ -7,6 +7,7 @@ import { LuLanguages } from "react-icons/lu";
 import { MdArrowBackIosNew, MdOutlineEditNote } from "react-icons/md";
 import { RiLockPasswordLine, RiWallet3Fill } from "react-icons/ri";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function page() {
   return (
@@ -18,9 +19,11 @@ export default function page() {
       </Link>
       <h1 className="text-xl font-extrabold ml-[40%] pb-5">MY ACCOUNT</h1>
       <div className="md:w-[500px] w-[260px] pb-10">
-        <img
-          src="./favicon.ico"
+        <Image
+          src="/favicon.ico"
           alt="fav"
+          width={250}
+          height={100}
           className="border rounded-full ml-[40%] w-[250px]"
         />
         <MdOutlineEditNote className=" ml-[70%] w-[50px]  h-[40px]" />
@@ -29,7 +32,7 @@ export default function page() {
         </h1>
       </div>
       <div className="border bg-green-800 border-[#626260] rounded-t-lg mt-5">
-        <h2 className="md:text-2xl text-sm font-extrabold p-5">
+        <h2 className="md:texttext-2xl text-sm font-extrabold p-5">
           Account overview
         </h2>
         <section className="flex p-5">
