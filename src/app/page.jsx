@@ -926,7 +926,7 @@ const Menu = () => {
           <SearchBar data={newCat} />
         </div>
       </div>
-      <div className="border border-[#626260]  rounded-lg">
+      <div className="border border-[#626260] md:text-lg text-sm  rounded-lg">
         <div className="ml-6 mr-6 mt-10">
           <section className="flex justify-between mb-2">
             <h1>Categories</h1>
