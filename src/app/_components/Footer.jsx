@@ -9,7 +9,7 @@ import { GrFavorite } from "react-icons/gr";
 const Footer = () => {
   return (
     <footer className="py-4 mb-[25%]">
-      <ul className="flex flex-wrap rounded-md bg-gray-500 gap-8 justify-center max-w-[480px] mx-auto space-x-6 z-50 fixed bottom-0 md:text-xl text-sm">
+      <ul className="flex flex-wrap rounded-md bg-gray-500 gap-8 justify-center max-w-[460px] mx-auto space-x-6 z-50 fixed bottom-0 md:text-xl text-sm">
         <li className="">
           <AiFillHome size={20} /> Home
         </li>
