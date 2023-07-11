@@ -1167,7 +1167,7 @@ const Menu = () => {
                   <li className="flex gap-5 mb-[2.5rem] font-medium text-2xl hover:translate-x-2 text-[#FFFCFC] ">
                     <span>
                       {" "}
-                      <GiChoice size={30} />{" "}
+                      <GiChoice size={30} /> ``
                     </span>
                     Your Last Choice
                   </li>
@@ -1180,14 +1180,14 @@ const Menu = () => {
                       Offers & Promotions
                     </li>{" "}
                   </Link>
-                  <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:translate-x-2 font-medium text-2xl">
+                  <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:border hover:translate-x-2 font-medium text-2xl">
                     <span>
                       {" "}
                       <MdOutlineWorkHistory size={30} />{" "}
                     </span>
                     Order History
                   </li>
-                  <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:translate-x-2 font-medium text-2xl">
+                  <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:border hover:translate-x-2 font-medium text-2xl">
                     <span>
                       {" "}
                       <IoIosPeople size={30} />{" "}
@@ -1195,7 +1195,7 @@ const Menu = () => {
                     Refer & Earn
                   </li>
                   <Link href="/Contact-us">
-                    <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:translate-x-2 font-medium text-2xl">
+                    <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:border hover:translate-x-2 font-medium text-2xl">
                       <span>
                         {" "}
                         <FiPhoneCall size={30} />{" "}
@@ -1203,14 +1203,14 @@ const Menu = () => {
                       Contact Us
                     </li>
                   </Link>
-                  <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:translate-x-2 font-medium text-2xl">
+                  <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:border hover:translate-x-2 font-medium text-2xl">
                     <span>
                       {" "}
                       <TbHelpHexagon size={30} />{" "}
                     </span>
                     Help Center
                   </li>
-                  <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:translate-x-2 font-medium text-2xl">
+                  <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:border hover:translate-x-2 font-medium text-2xl">
                     <span>
                       {" "}
                       <GiStarFormation size={30} />{" "}
@@ -1218,7 +1218,7 @@ const Menu = () => {
                     Rate Us
                   </li>
                   <Link href="/About">
-                    <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:translate-x-2 font-medium text-2xl">
+                    <li className="flex gap-5 text-[#FFFCFC] mb-[2.5rem] hover:border hover:translate-x-2 font-medium text-2xl">
                       {" "}
                       <span>
                         {" "}
@@ -1227,7 +1227,7 @@ const Menu = () => {
                       About Us{" "}
                     </li>{" "}
                   </Link>
-                  <li className="flex gap-5 text-[#FFFCFC] hover:translate-x-2 mb-5 font-medium text-2xl ">
+                  <li className="flex gap-5 text-[#FFFCFC] hover:border hover:translate-x-2 mb-5 font-medium text-2xl ">
                     <span className="">
                       {" "}
                       <FiLogOut size={30} />{" "}

@@ -22,9 +22,9 @@ const Footer = () => {
 
   return (
     <footer className="mb-[25%] md:w-[550px] w-full">
-      <ul className="flex justify-between md:w-[550px] w-full mr-2 md:mr-8 gap-8 border text-white rounded-md bg-[#01Ac66] z-50 fixed bottom-0 md:text-xl text-sm">
+      <ul className="flex justify-between md:w-[550px] w-full  md:mr-8 gap-8 border text-white rounded-md bg-[#01Ac66] z-50 fixed bottom-0 md:text-xl text-sm">
         <li className="hover:translate-x-2">
-          <AiOutlineHome size={20} onClick={Mobile} className="ml-2" />
+          <AiOutlineHome size={20} onClick={Mobile} />
           <span className="text-center">Home</span>
         </li>
         <Link href="/Fav">
@@ -34,13 +34,13 @@ const Footer = () => {
             }`}
             onClick={handleFavoriteClick}
           >
-            <IoMdHeart size={20} style={{ color: "red" }} className="ml-3" />
+            <IoMdHeart size={20} style={{ color: "red" }} />
             <span>Favorite</span>
           </li>
         </Link>
         <Link href="/Wallet">
           <li className="hover:translate-x-2">
-            <TfiWallet size={25} className="ml-1" />
+            <TfiWallet size={25} />
             <span>Wallet</span>
           </li>
         </Link>
