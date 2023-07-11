@@ -37,7 +37,7 @@ const FoodStuff = ({ item }) => {
           <section className="border-t-black pt-5 md:text-xl text-sm">
             <p> {item.name}</p>
             <span className="flex">
-              <p> {item.price}</p>
+              <p>₦ {item.price} /kg</p>
               <Button />
             </span>
           </section>

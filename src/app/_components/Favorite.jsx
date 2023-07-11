@@ -20,6 +20,7 @@ export default function Fav({ id }) {
       const parsedFavorites = JSON.parse(storedFavorites);
       return parsedFavorites;
     }
+
     const removeItem = (item) => {
       const updatedFavorites = isFavorite.filter(
         (favItem) => favItem.id !== item.id

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { MdArrowBackIosNew } from "react-icons/md";
 import Button from "@/app/_components/Button";
 import Fav from "@/app/_components/Favorite";
+import { useCart } from "@/app/_components/Cart";
 
 function fetchProducts(params) {
   const selectedCategory = categories.find(
@@ -21,6 +22,7 @@ function fetchProducts(params) {
 }
 
 export default function Page({ params }) {
+  const { addToCart } = useCart();
   const products = fetchProducts(params);
   return (
     <div className="mt-3 p-2">
@@ -31,7 +33,10 @@ export default function Page({ params }) {
       </Link>
       <div className="grid grid-cols-3 border border-[#626260] rounded-md text-sm mt-5 p-3 gap-4">
         {products.map((product) => (
-          <div key={product.id} className="border border-[#626260] rounded-md ">
+          <div
+            key={product.id}
+            className="border border-[#626260] shadow-xl shadow-[#262620] hover:scale-105 bg-white rounded-md "
+          >
             <Image
               src={product.image}
               alt="products"
@@ -43,8 +48,8 @@ export default function Page({ params }) {
               <p>{product.description}</p>
               <Fav id={product} />
               <span className="flex space-x-3">
-                <p className="mb-0">Price: {product.price}</p>
-                <Button item={product} />
+                <p className="mb-0">Price: ₦{product.price}/kg</p>
+                <Button item={product} addToCart={addToCart} />
               </span>
             </section>
           </div>

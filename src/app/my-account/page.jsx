@@ -1,15 +1,34 @@
 "use client";
-import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsFillPersonFill } from "react-icons/bs";
 import { GrFormNext } from "react-icons/gr";
 import { LuLanguages } from "react-icons/lu";
 import { MdArrowBackIosNew, MdOutlineEditNote } from "react-icons/md";
 import { RiLockPasswordLine, RiWallet3Fill } from "react-icons/ri";
-import Link from "next/link";
-import Image from "next/image";
 
-export default function page() {
+const Profile = () => {
+  const [editMode, setEditMode] = useState(false);
+  const [name, setName] = useState("Sharon Ibanga");
+
+  const handleEditClick = () => {
+    setEditMode(true);
+  };
+
+  const handleSaveClick = () => {
+    setEditMode(false);
+    // Perform save/update action with the updated name
+    // You can make an API call or update the data using the appropriate method
+    // For simplicity, we'll just log the updated name
+    console.log(name);
+  };
+
+  const handleInputChange = (event) => {
+    setName(event.target.value);
+  };
+
   return (
     <div className="flex flex-col h-full md:text-xl text-sm text-[20px] border border-[#626260] rounded-lg p-5">
       <Link href="/">
@@ -22,31 +41,51 @@ export default function page() {
         <Image
           src="/favicon.ico"
           alt="fav"
-          width={250}
+          width={120}
           height={100}
-          className="border rounded-full ml-[40%] w-[250px]"
+          className="border rounded-full ml-[40%]"
         />
-        <MdOutlineEditNote className=" ml-[70%] w-[50px]  h-[40px]" />
+        {editMode ? (
+          <MdOutlineEditNote
+            className="ml-[70%] w-[50px] h-[40px] cursor-pointer"
+            onClick={handleSaveClick}
+          />
+        ) : (
+          <MdOutlineEditNote
+            className="ml-[70%] w-[50px] h-[40px] cursor-pointer"
+            onClick={handleEditClick}
+          />
+        )}
         <h1 className="md:text-2xl text-sm font-extrabold md:ml-[50%] ml-[37%]">
-          Sharon Ibanga
+          {editMode ? (
+            <input
+              type="text"
+              value={name}
+              onChange={handleInputChange}
+              placeholder="change profile here..."
+              className="text-black"
+            />
+          ) : (
+            name
+          )}
         </h1>
       </div>
       <div className="border bg-green-800 border-[#626260] rounded-t-lg mt-5">
         <h2 className="md:text-2xl text-sm font-extrabold p-5">
           Account overview
         </h2>
-        <section className="flex p-5">
-          <span className="border bg-white border-[#626260] rounded-xl p-3 ">
+        <section className="flex p-5 hover:translate-x-2">
+          <span className="border bg-white border-[#626260] rounded-xl p-3">
             <BsFillPersonFill color="green" />
           </span>
-          <h3 className="ml-[10%]">My Profile</h3>
+          <h3 className="ml-[10%] hover:translate-x-2">My Profile</h3>
           <span className="md:ml-[60%] ml-[50%]">
             <GrFormNext />
           </span>
         </section>
         <Link href="/Cart">
-          <section className="flex p-5">
-            <span className="border bg-white border-[#626260] rounded-xl p-3 ">
+          <section className="flex p-5 hover:translate-x-2">
+            <span className="border bg-white border-[#626260] rounded-xl p-3">
               <AiOutlineShoppingCart color="green" />
             </span>
             <h3 className="ml-[10%]">My Order</h3>
@@ -56,8 +95,8 @@ export default function page() {
           </section>
         </Link>
         <Link href="/Wallet">
-          <section className="flex p-5 ">
-            <span className="border bg-white border-[#626260] rounded-xl p-3 ">
+          <section className="flex p-5 hover:translate-x-2">
+            <span className="border bg-white border-[#626260] rounded-xl p-3">
               <RiWallet3Fill color="green" />
             </span>
             <h3 className="ml-[10%]">Payment</h3>
@@ -67,8 +106,8 @@ export default function page() {
           </section>
         </Link>
         <Link href="/Password">
-          <section className="flex p-5">
-            <span className="border rounded-xl border-[#626260] bg-white p-3 ">
+          <section className="flex p-5 hover:translate-x-2">
+            <span className="border rounded-xl border-[#626260] bg-white p-3">
               <RiLockPasswordLine color="green" />
             </span>
             <h3 className="ml-[10%]">Change Password</h3>
@@ -77,8 +116,8 @@ export default function page() {
             </span>
           </section>
         </Link>
-        <section className="flex p-5 space-x-3">
-          <span className="border rounded-xl p-3 border-[#626260] bg-white ">
+        <section className="flex p-5 space-x-3 hover:translate-x-2">
+          <span className="border rounded-xl p-3 border-[#626260]  bg-white">
             <LuLanguages color="green" />
           </span>
           <label htmlFor="Change Language">Change Language</label>
@@ -87,7 +126,6 @@ export default function page() {
             name="Change Language"
             id="change language"
           >
-            {" "}
             <option value=""></option>
             <option value="English">English</option>
             <option value="German">German</option>
@@ -100,4 +138,6 @@ export default function page() {
       </div>
     </div>
   );
-}
+};
+
+export default Profile;

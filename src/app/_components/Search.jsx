@@ -46,13 +46,13 @@ const SearchBar = ({ data }) => {
     <div className="cursor-pointer">
       <div className="flex sm:text-sm justify-center items-center">
         <form onSubmit={handleFormSubmit} action="search">
-          <div className="relative">
+          <div className="relative bg-white">
             <input
               type="search"
               value={searchList}
               onChange={handleSearch}
-              placeholder="Search..."
-              className="border border-[#626260] bg-transparent text-white rounded-md p-2 pl-10"
+              placeholder="Search food,drinks...."
+              className="border border-[#626260] bg-transparent text-black rounded-md p-2 pl-10"
             />
             <BsSearch
               size={24}
@@ -63,12 +63,12 @@ const SearchBar = ({ data }) => {
             Submit
           </button>
         </form>
-        <span className="border rounded-md bg-gray-500 p-2">
+        <span className="border rounded-md bg-[#01AC66]  p-2">
           <LuSettings2 size={25} style={{ color: "white" }} />
         </span>{" "}
       </div>
 
-      <div className="relative">
+      <div className="relative ">
         <ul className="ml-3 grid grid-cols-2 gap-2 mt-5">
           {searchResults.length === 0 ? (
             <li></li>
@@ -84,7 +84,7 @@ const SearchBar = ({ data }) => {
                   />
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
-                  <p>Price: {item.price}</p>
+                  <p>Price:₦ {item.price} /kg</p>
                   <Button />
                 </div>
               </li>
@@ -93,7 +93,7 @@ const SearchBar = ({ data }) => {
           {!showMore && searchResults.length < data.length && (
             <li>
               <button
-                className=" absolute right-4 top-0 font-bold p-1"
+                className=" absolute right-4 text-sm top-0 font-bold p-1"
                 onClick={handleClickShowMore}
               >
                 Show More
@@ -101,9 +101,9 @@ const SearchBar = ({ data }) => {
             </li>
           )}
           {showMore && (
-            <li className="absolute top-0 right-4">
+            <li className="absolute top-6 right-4 text-sm ">
               <button
-                className="bg-green-500 text-black p-1 font-bold"
+                className="bg-green-500  text-black p-1 font-bold"
                 onClick={handleClickShowLess}
               >
                 Show Less

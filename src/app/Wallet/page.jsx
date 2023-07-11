@@ -6,7 +6,7 @@ import { GiWallet } from "react-icons/gi";
 export default function page() {
   return (
     <div className="gap-6 p-5 ">
-      <section className="border rounded-lg bg-slate-200 w-[30px]">
+      <section className="border rounded-lg bg-[#E6F7F0] w-[30px]">
         <Link href="/">
           <span>
             <MdArrowBackIosNew size={20} />
@@ -30,7 +30,7 @@ export default function page() {
       </div>
       <h1 className="font-bold pt-6 ">Today</h1>
       <div className="">
-        <section className="border rounded-xl border-[#626260] bg-[#3D3D37] p-5">
+        <section className="border rounded-xl border-[#626260] bg-[#E6F7F0] p-5">
           <span className="flex justify-between">
             {" "}
             <p>Money Added To Wallet</p>
@@ -44,7 +44,7 @@ export default function page() {
       </div>
       <h1 className="font-bold pt-6 ">Yesterday</h1>
       <div className="">
-        <section className="border rounded-xl border-[#626260] bg-[#3D3D37] p-5">
+        <section className="border rounded-xl border-[#626260] bg-[#E6F7F0] p-5">
           <span className="flex justify-between">
             {" "}
             <p>Order Number 34234</p>
@@ -58,7 +58,7 @@ export default function page() {
       </div>
       <h1 className="font-bold pt-6 ">22 April 2023</h1>
       <div className="">
-        <section className="border rounded-xl border-[#626260] bg-[#3D3D37] p-5 mt-6">
+        <section className="border rounded-xl border-[#626260] bg-[#E6F7F0] p-5 mt-6">
           <span className="flex justify-between">
             {" "}
             <p>Order No 34234</p>
@@ -69,7 +69,7 @@ export default function page() {
             <p>Balance ₦11,250.00 </p>
           </span>
         </section>
-        <section className="border rounded-xl border-[#626260] bg-[#3D3D37] p-5 mt-6 ">
+        <section className="border rounded-xl border-[#626260] bg-[#E6F7F0] p-5 mt-6 ">
           <span className="flex justify-between">
             {" "}
             <p>Order No 34234</p>
@@ -80,7 +80,7 @@ export default function page() {
             <p className="">Balance ₦11,250.00 </p>
           </span>
         </section>
-        <section className="border rounded-xl border-[#626260] bg-[#3D3D37] p-5 mt-6">
+        <section className="border rounded-xl border-[#626260] bg-[#E6F7F0] p-5 mt-6">
           <span className="flex justify-between">
             {" "}
             <p>Order No 34234</p>

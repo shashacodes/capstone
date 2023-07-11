@@ -13,7 +13,7 @@ import Link from "next/link";
 export default function page() {
   return (
     <div className="p-6">
-      <h1 className="gap-5 text-3xl font-bold mb-5">Welcome Sharon!</h1>
+      <h1 className="gap-5 text-3xl font-bold">Welcome Sharon!</h1>
       <div className="gap-6 text-2xl ">
         <section className="">
           <h2 className="flex gap-6 mb-5">
@@ -35,15 +35,17 @@ export default function page() {
             </h2>
           </section>{" "}
         </Link>
-        <section className="">
-          <h2 className="flex gap-6 mb-5">
-            <span>
-              {" "}
-              <MdOutlineWorkHistory size={30} />{" "}
-            </span>
-            Order History
-          </h2>
-        </section>
+        <Link href="/order-history">
+          <section className="">
+            <h2 className="flex gap-6 mb-5">
+              <span>
+                {" "}
+                <MdOutlineWorkHistory size={30} />{" "}
+              </span>
+              Order History
+            </h2>
+          </section>
+        </Link>
         <section className="">
           <h2 className="flex gap-6 mb-5">
             <span>
