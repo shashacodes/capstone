@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "./Button";
 
 const SearchBar = ({ data }) => {
-  const [searchList, setSearchList] = useState("");
+  const [searchList, setSearchList] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const maxItemsToShow = 5;
