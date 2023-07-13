@@ -1133,7 +1133,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="text-[20px] mt-3 text-black mx-[1rem]">
+    <div className="text-[20px]   mt-3 text-black mx-[1rem]">
       <div className="flex flex-col-1 justify-between ml-6 mr-6">
         <div>
           <li onClick={handleMenu} className=" cursor-pointer mt-[36px] ">
@@ -1142,7 +1142,7 @@ const Menu = () => {
           <div
             className={
               menuOpen
-                ? "fixed left-0 top-0 w-[90%] h-screen px-[3rem] bg-[#01AC66] rounded-xl ease-in overflow-auto z-50"
+                ? "fixed left-0 top-0 md:w-[30%] w-[90%] px-[3rem] bg-[#01AC66] rounded-xl ease-in overflow-auto z-50"
                 : "fixed left-[-100%] top-0 px-[3rem] ease-in h-screen "
             }
           >
@@ -1167,7 +1167,7 @@ const Menu = () => {
                   <li className="flex gap-5 mb-[2.5rem] font-medium text-2xl hover:translate-x-2 text-[#FFFCFC] ">
                     <span>
                       {" "}
-                      <GiChoice size={30} /> ``
+                      <GiChoice size={30} />
                     </span>
                     Your Last Choice
                   </li>

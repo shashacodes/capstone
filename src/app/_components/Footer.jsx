@@ -9,55 +9,85 @@ import { IoMdHeart } from "react-icons/io";
 import { TfiWallet } from "react-icons/tfi";
 
 const Footer = () => {
-  const [Mobile, setMobile] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [activeIcon, setActiveIcon] = useState(null);
 
   useEffect(() => {
-    setIsFavorite(window.location.pathname === "/Fav");
+    setActiveIcon(window.location.pathname);
   }, []);
 
-  const handleFavoriteClick = () => {
-    setIsFavorite(!isFavorite);
+  const handleIconClick = (path) => {
+    setActiveIcon(path);
   };
 
   return (
-    <footer className="mb-[25%] md:w-[550px] w-full">
+    <footer className="mb-[25%] md:w-[40%] w-full">
       <ul className="flex justify-between md:w-[550px] w-full  md:mr-8 gap-8 border text-white rounded-md bg-[#01Ac66] z-50 fixed bottom-0 md:text-xl text-sm">
-        <li className="hover:translate-x-2">
-          <AiOutlineHome size={20} onClick={Mobile} />
+        <li
+          className={`hover:translate-x-2 ${
+            activeIcon === "/" ? "text-green-400" : ""
+          }`}
+          onClick={() => handleIconClick("/")}
+        >
+          {activeIcon === "/" ? (
+            <AiFillHome size={20} />
+          ) : (
+            <AiOutlineHome size={20} />
+          )}
           <span className="text-center">Home</span>
         </li>
         <Link href="/Fav">
           <li
             className={`hover:translate-x-2 ${
-              isFavorite ? "text-red-500" : ""
+              activeIcon === "/Fav" ? "text-green-400" : ""
             }`}
-            onClick={handleFavoriteClick}
+            onClick={() => handleIconClick("/Fav")}
           >
-            <IoMdHeart size={20} style={{ color: "red" }} />
+            {activeIcon === "/Fav" ? (
+              <GrFavorite size={20} style={{ color: "white" }} />
+            ) : (
+              <IoMdHeart size={20} style={{ color: "white" }} />
+            )}
             <span>Favorite</span>
           </li>
         </Link>
         <Link href="/Wallet">
-          <li className="hover:translate-x-2">
-            <TfiWallet size={25} />
+          <li
+            className={`hover:translate-x-2 ${
+              activeIcon === "/Wallet" ? "text-green-400" : ""
+            }`}
+            onClick={() => handleIconClick("/Wallet")}
+          >
+            {activeIcon === "/Wallet" ? (
+              <GiWallet size={25} />
+            ) : (
+              <TfiWallet size={25} />
+            )}
             <span>Wallet</span>
           </li>
         </Link>
         <Link href="/Cart">
-          <li className="hover:translate-x-2">
+          <li
+            className={`hover:translate-x-2 ${
+              activeIcon === "/Cart" ? "text-green-400" : ""
+            }`}
+            onClick={() => handleIconClick("/Cart")}
+          >
             <FiShoppingCart size={20} className="ml-2" />
             <span>Orders</span>
           </li>
         </Link>
         <Link href="/my-account">
-          <li className="mr-4 md:mr-8 hover:translate-x-2">
+          <li
+            className={`mr-4 md:mr-8 hover:translate-x-2 ${
+              activeIcon === "/my-account" ? "text-green-400" : ""
+            }`}
+            onClick={() => handleIconClick("/my-account")}
+          >
             <BsPerson size={25} className="ml-2" />
             <span>Profile</span>
           </li>
         </Link>
       </ul>
-      {/* {!menuOpen && <Footer />} */}
     </footer>
   );
 };

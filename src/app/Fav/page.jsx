@@ -1,46 +1,36 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Fav from "../_components/Favorite";
 import Image from "next/image";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import Button from "../_components/Button";
 
 export default function Page() {
-  const [isFavorite, setIsFavorite] = useState([]);
-  const clearFav = () => {
-    setIsFavorite([]);
-    localStorage.removeItem("isFavorite");
+  const [favorites, setFavorites] = useState([]);
+
+  const addToCart = (item) => {
+    // Add the item to the cart
+    // Implement your logic here
+    console.log("Added to cart:", item);
   };
 
-  const handleClick = (id) => {
-    const selectedItem = isFavorite.find((item) => item.id === id);
-    if (selectedItem) {
-      setIsFavorite((prevState) => [...prevState, selectedItem]);
-    }
+  const removeItem = (item) => {
+    const updatedFavorites = favorites.filter(
+      (favItem) => favItem.id !== item.id
+    );
+    setFavorites(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    setIsFavorite(storedFavorites);
+    setFavorites(storedFavorites);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(isFavorite));
-  }, [isFavorite]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("myData"); // Remove the "myData" item from local storage
-    }
-  }, []);
-  const removeItem = (item) => {
-    const updatedFavorites = isFavorite.filter(
-      (favItem) => favItem.id !== item.id
-    );
-    setIsFavorite(updatedFavorites);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  const clearFavorites = () => {
+    setFavorites([]);
+    localStorage.removeItem("favorites");
   };
 
   return (
@@ -57,22 +47,22 @@ export default function Page() {
         <span className="ml-[20%] hover:text">
           <RiDeleteBin5Line
             size={20}
-            onClick={clearFav}
+            onClick={clearFavorites}
             title="Clear Fav items?"
           />
         </span>
       </span>
-      {isFavorite.length === 0 ? (
+      {favorites.length === 0 ? (
         <p className="text-center">No items in the wishlist.</p>
       ) : (
         <ul className="grid grid-cols-2 rounded-md ml-8 pt-4">
-          {isFavorite.map((item, index) => (
+          {favorites.map((item, index) => (
             <div key={item.id} className=" rounded-md bg-white pt-6 p-3 gap-4">
               <Image src={item.image} width={150} height={100} alt="images" />
 
               <li>{item.name}</li>
-              <li> ₦{item.price} /kg</li>
-              <Button />
+              <li>₦{item.price} /kg</li>
+              <Button onClick={() => addToCart(item)}>Add to Cart</Button>
               <span
                 className=" rounded-md p-2 mt-2"
                 onClick={() => removeItem(item)}

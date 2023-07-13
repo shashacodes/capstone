@@ -7,7 +7,7 @@ export default function ParentComponent() {
   const { cartItems, addToCart, removeFromCart, clearCart } = useCart();
 
   const handleAddToCart = (item) => {
-    addToCart(item);
+    addToCart(item, id);
   };
 
   return (
