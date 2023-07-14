@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "./Button";
 
 const SearchBar = ({ data }) => {
-  const [searchList, setSearchList] = useState([]);
+  const [searchList, setSearchList] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showMore, setShowMore] = useState(false);
   const maxItemsToShow = 5;
@@ -18,13 +18,17 @@ const SearchBar = ({ data }) => {
     const list = e.target.value.toLowerCase();
     setSearchList(list);
 
-    const filteredData = data.filter(
-      (item) =>
-        item.name.toLowerCase().includes(list) ||
-        item.description.toLowerCase().includes(list)
-    );
+    if (list === "") {
+      setSearchResults([]);
+    } else {
+      const filteredData = data.filter(
+        (item) =>
+          item.name.toLowerCase().includes(list) ||
+          item.description.toLowerCase().includes(list)
+      );
 
-    setSearchResults(filteredData.slice(0, maxItemsToShow));
+      setSearchResults(filteredData.slice(0, maxItemsToShow));
+    }
   };
 
   const handleClickShowMore = () => {
@@ -51,7 +55,7 @@ const SearchBar = ({ data }) => {
               type="search"
               value={searchList}
               onChange={handleSearch}
-              placeholder="Search food,drinks...."
+              placeholder="Search food, drinks...."
               className="border border-[#626260] bg-transparent text-black rounded-md p-2 pl-10"
             />
             <BsSearch
@@ -70,8 +74,8 @@ const SearchBar = ({ data }) => {
 
       <div className="relative ">
         <ul className="ml-3 grid grid-cols-2 gap-2 mt-5">
-          {searchResults.length === 0 ? (
-            <li></li>
+          {searchResults.length === 0 && searchList !== "" ? (
+            <li>No items found.</li>
           ) : (
             searchResults.map((item) => (
               <li key={item.id}>
@@ -90,16 +94,18 @@ const SearchBar = ({ data }) => {
               </li>
             ))
           )}
-          {!showMore && searchResults.length < data.length && (
-            <li>
-              <button
-                className=" absolute right-4 text-sm top-0 font-bold p-1"
-                onClick={handleClickShowMore}
-              >
-                Show More
-              </button>
-            </li>
-          )}
+          {!showMore &&
+            searchResults.length < data.length &&
+            searchList !== "" && (
+              <li>
+                <button
+                  className=" absolute right-4 text-sm top-0 font-bold p-1"
+                  onClick={handleClickShowMore}
+                >
+                  Show More
+                </button>
+              </li>
+            )}
           {showMore && (
             <li className="absolute top-6 right-4 text-sm ">
               <button

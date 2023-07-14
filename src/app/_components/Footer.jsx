@@ -1,5 +1,6 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import { AiFillHome, AiOutlineHome } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";

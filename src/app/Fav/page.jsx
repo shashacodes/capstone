@@ -15,7 +15,15 @@ export default function Page() {
     console.log("Added to cart:", item);
   };
 
-  const removeItem = (item) => {
+  const handleAddToFavorites = (item) => {
+    if (!favorites.find((favItem) => favItem.id === item.id)) {
+      const updatedFavorites = [...favorites, item];
+      setFavorites(updatedFavorites);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    }
+  };
+
+  const handleRemove = (item) => {
     const updatedFavorites = favorites.filter(
       (favItem) => favItem.id !== item.id
     );
@@ -62,14 +70,12 @@ export default function Page() {
 
               <li>{item.name}</li>
               <li>₦{item.price} /kg</li>
-              <Button onClick={() => addToCart(item)}>Add to Cart</Button>
-              <span
-                className=" rounded-md p-2 mt-2"
-                onClick={() => removeItem(item)}
-              >
-                <RiDeleteBin5Line size={20} />
-              </span>
+              {/* <Button onClick={() => addToCart(item)} />
+              <div className="flex gap-2 mt-2"> */}
+              {/* <button onClick={() => handleRemove(item)}>Remove</button> */}
+              {/* Add any additional UI or functionality for decreasing the quantity */}
             </div>
+            // </div>
           ))}
         </ul>
       )}

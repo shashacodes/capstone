@@ -1,42 +1,23 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
+import Footer from "./_components/Footer";
+import Slider from "./_components/Slider";
 import Image from "next/image";
 import pics from "./favicon.ico";
 import pic from "./media/basket.png";
-import { TiLocation } from "react-icons/ti";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { BsFillBellFill } from "react-icons/bs";
-import { BsSearch } from "react-icons/bs";
-import { LuSettings2 } from "react-icons/lu";
-import { AiFillHome } from "react-icons/ai";
-import { BsPerson } from "react-icons/bs";
-import { GiWallet } from "react-icons/gi";
-import { FiShoppingCart } from "react-icons/fi";
-import { GrFavorite } from "react-icons/gr";
-import { BsFilterLeft } from "react-icons/bs";
-import { FcAbout } from "react-icons/fc";
-import { TbHelpHexagon } from "react-icons/tb";
-import { FiPhoneCall } from "react-icons/fi";
-import { GiStarFormation } from "react-icons/gi";
-import { FiLogOut } from "react-icons/fi";
-import { IoIosPeople } from "react-icons/io";
-import { MdFavoriteBorder, MdOutlineWorkHistory } from "react-icons/md";
-import { MdLocalOffer } from "react-icons/md";
-import { GiChoice } from "react-icons/gi";
-import { BiMessageSquareAdd } from "react-icons/bi";
-import { MdArrowBackIosNew } from "react-icons/md";
-import Link from "next/link";
-import { AiOutlineCloseCircle } from "react-icons/ai";
-import FoodItem from "./_components/FoodItem";
-import { cater } from "/src/app/object";
-import object, { categories, foods, items } from "./object";
-import FoodList from "./_components/FoodList";
-import PopularItems from "./popular-items/page";
-import FoodStuff from "./_components/FoodStuff";
-import Slider from "./_components/Slider";
-import Button from "./_components/Button";
 import SearchBar from "./_components/Search";
-import Footer from "./_components/Footer";
+import { BsFillBellFill, BsFilterLeft } from "react-icons/bs";
+import { TfiLocationPin } from "react-icons/tfi";
+import { FiLogOut, FiPhoneCall } from "react-icons/fi";
+import { FcAbout } from "react-icons/fc";
+import { GiChoice, GiStarFormation } from "react-icons/gi";
+import { TbHelpHexagon } from "react-icons/tb";
+import { IoIosPeople } from "react-icons/io";
+import { MdLocalOffer, MdOutlineWorkHistory } from "react-icons/md";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { categories } from "./object";
+import FoodStuff from "./_components/FoodStuff";
 
 const newCat = [
   {
@@ -1142,7 +1123,7 @@ const Menu = () => {
           <div
             className={
               menuOpen
-                ? "fixed left-0 top-0 md:w-[30%] w-[90%] px-[3rem] bg-[#01AC66] rounded-xl ease-in overflow-auto z-50"
+                ? "fixed left-0 top-0 md:w-[40%] w-[100%] px-[3rem] bg-[#01AC66] rounded-xl ease-in overflow-y-auto z-50"
                 : "fixed left-[-100%] top-0 px-[3rem] ease-in h-screen "
             }
           >
@@ -1159,11 +1140,11 @@ const Menu = () => {
                 alt="icon"
                 className="border rounded-full mr-4 mt-[48px]"
               />
-              <div className="flex-col mt-8 bg-[#01AC66] text-white">
+              <div className="flex-col mt-8 bg-[#01AC66] text-white h-[250px] overflow-y-auto">
                 <h1 className="gap-5 text-2xl font-bold mb-6">
                   Welcome Sharon!
                 </h1>
-                <ul className="gap-6 pb-5 md:text-2xl text-lg cursor-pointer text-[#FFFCFC] ">
+                <ul className="gap-6 pb-5 md:text-2xl text-lg cursor-pointer text-[#FFFCFC]">
                   <li className="flex gap-5 mb-[2.5rem] font-medium text-2xl hover:translate-x-2 text-[#FFFCFC] ">
                     <span>
                       {" "}
@@ -1243,7 +1224,7 @@ const Menu = () => {
         <section className="ml-[20%] bg-inherit mt-[3rem] text-black">
           <h1 className="ml-[15%] font-bold text-[#888888]">Location</h1>
           <span className="flex">
-            <TiLocation size={20} />
+            <TfiLocationPin size={20} />
             <select
               name="usa"
               id=""
@@ -1267,12 +1248,12 @@ const Menu = () => {
       </div>
       <div className="border border-gray-500 mt-10 md:text-lg text-sm font-bold rounded-lg">
         <div className="ml-6 mr-6 mt-[10%]">
-          <section className="flex justify-between mb-2">
-            <h1>Categories</h1>
-            <Link href="/Categories">
+          <Link href="/Categories">
+            <section className="flex justify-between mb-2">
+              <h1>Categories</h1>
               <p className="animate-pulse font-bold">see all</p>{" "}
-            </Link>
-          </section>
+            </section>
+          </Link>
           <div className=" gap-3 md:max-w-[640px] max-w-[480px]">
             <div className="grid grid-cols-4 gap-4">
               {categories.slice(0, 4).map((cat) => {
@@ -1296,12 +1277,12 @@ const Menu = () => {
           </div>
 
           <div className="ml-6 mr-6 mt-[10%]">
-            <section className="flex justify-between mb-2 ">
-              <h1>Deals</h1>
-              <Link href="/Deals">
+            <Link href="/Deals">
+              <section className="flex justify-between mb-2 ">
+                <h1>Deals</h1>
                 <p className="animate-pulse font-bold">see all</p>
-              </Link>
-            </section>
+              </section>
+            </Link>
             <div className="grid grid-cols-2 mr-6 ml-6 border md:w-[500px] w-[300px] bg-[#01Ac66] text-white rounded-xl ">
               <h2 className="md:text-xl text-md font-bold mx-10 mb-5 pt-5">
                 50% off <br />
@@ -1325,19 +1306,19 @@ const Menu = () => {
           </div>
 
           <div className="ml-6 mr-6 mt-10">
-            <section className="flex justify-between text-xl">
-              <h1>Popular Items</h1>
-              <Link href="/popular-items">
+            <Link href="/popular-items">
+              <section className="flex justify-between text-xl">
+                <h1>Popular Items</h1>
                 <p className="animate-pulse font-bold">see all</p>
-              </Link>
-            </section>
+              </section>
+            </Link>
             <div className="gap-4">
               <Slider slides={FoodStuff} />
             </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };

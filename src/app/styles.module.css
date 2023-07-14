@@ -1,0 +1,13 @@
+.myListItem {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #FFFCFC;
+  }
+  
+  .myListItem:hover {
+    transform: translateX(2px);
+  }
+  
