@@ -1248,10 +1248,10 @@ const Menu = () => {
       </div>
       <div className="border border-gray-500 mt-10 md:text-lg text-sm font-bold rounded-lg">
         <div className="ml-6 mr-6 mt-[10%]">
-          <Link href={"/Categories"}>
+          <Link href="/Categories">
             <section className="flex justify-between mb-2">
               <h1>Categories</h1>
-              <p className="animate-pulse font-bold">see all</p>{" "}
+              <p className="font-bold">see all</p>{" "}
             </section>
           </Link>
 
@@ -1278,10 +1278,10 @@ const Menu = () => {
           </div>
 
           <div className="ml-6 mr-6 mt-[10%]">
-            <Link href={"/Deals"}>
+            <Link href="/Deals">
               <section className="flex justify-between mb-2 ">
                 <h1>Deals</h1>
-                <p className="animate-pulse font-bold">see all</p>
+                <p className=" font-bold">see all</p>
               </section>
             </Link>
 
@@ -1308,10 +1308,10 @@ const Menu = () => {
           </div>
 
           <div className="ml-6 mr-6 mt-10">
-            <Link href={"/popular-items"}>
+            <Link href="/popular-items">
               <section className="flex justify-between text-xl">
                 <h1>Popular Items</h1>
-                <p className="animate-pulse font-bold">see all</p>
+                <p className=" font-bold">see all</p>
               </section>
             </Link>
 
