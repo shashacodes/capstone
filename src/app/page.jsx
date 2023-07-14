@@ -1248,12 +1248,13 @@ const Menu = () => {
       </div>
       <div className="border border-gray-500 mt-10 md:text-lg text-sm font-bold rounded-lg">
         <div className="ml-6 mr-6 mt-[10%]">
-          <Link href="/Categories">
-            <section className="flex justify-between mb-2">
+          <section className="flex justify-between mb-2">
+            <Link href="/Categories">
               <h1>Categories</h1>
               <p className="animate-pulse font-bold">see all</p>{" "}
-            </section>
-          </Link>
+            </Link>
+          </section>
+
           <div className=" gap-3 md:max-w-[640px] max-w-[480px]">
             <div className="grid grid-cols-4 gap-4">
               {categories.slice(0, 4).map((cat) => {
@@ -1277,12 +1278,13 @@ const Menu = () => {
           </div>
 
           <div className="ml-6 mr-6 mt-[10%]">
-            <Link href="/Deals">
-              <section className="flex justify-between mb-2 ">
+            <section className="flex justify-between mb-2 ">
+              <Link href="/Deals">
                 <h1>Deals</h1>
                 <p className="animate-pulse font-bold">see all</p>
-              </section>
-            </Link>
+              </Link>
+            </section>
+
             <div className="grid grid-cols-2 mr-6 ml-6 border md:w-[500px] w-[300px] bg-[#01Ac66] text-white rounded-xl ">
               <h2 className="md:text-xl text-md font-bold mx-10 mb-5 pt-5">
                 50% off <br />
@@ -1306,12 +1308,13 @@ const Menu = () => {
           </div>
 
           <div className="ml-6 mr-6 mt-10">
-            <Link href="/popular-items">
-              <section className="flex justify-between text-xl">
+            <section className="flex justify-between text-xl">
+              <Link href="/popular-items">
                 <h1>Popular Items</h1>
                 <p className="animate-pulse font-bold">see all</p>
-              </section>
-            </Link>
+              </Link>
+            </section>
+
             <div className="gap-4">
               <Slider slides={FoodStuff} />
             </div>
