@@ -1224,6 +1224,7 @@ module.exports =    {
   "deals": [
     {
       "name": "Combo Deal 1",
+      "id": 1,
       "items": [
         { "name": "Apples:", "quantity": 5 },
         { "name": "Oranges:", "quantity": 3 },
@@ -1235,6 +1236,7 @@ module.exports =    {
     },
     {
       "name": "Combo Deal 2",
+       "id": 2,
       "items": [
         { "name": "Milk:", "quantity": 1 },
         { "name": "Cereal:", "quantity": 1 },
@@ -1246,6 +1248,7 @@ module.exports =    {
     },
     {
       "name": "Combo Deal 3",
+      "id": 3,
       "items": [
         { "name": "Chicken:", "quantity": 2 },
         { "name": "Carrot:", "quantity": 3 },
@@ -1258,6 +1261,7 @@ module.exports =    {
     },
     {
       "name": "Combo Deal 4",
+      "id": 4,
       "items": [
         { "name": "Juice:", "quantity": 4 },
         { "name": "Soda:", "quantity": 5 },
@@ -1271,6 +1275,7 @@ module.exports =    {
     },
     {
       "name": "Combo Deal 5",
+      "id": 5,
       "items": [
         { "name": "strawberry flavor:", "quantity": 1 },
         { "name": "chocolate flavor:", "quantity": 1 },
@@ -1283,6 +1288,7 @@ module.exports =    {
     },
     {
       "name": "Combo Deal 6",
+      "id": 6,
       "items": [
         { "name": "cookies:", "quantity": 2 },
         { "name": "biscuits:", "quantity": 2 },
@@ -1294,6 +1300,8 @@ module.exports =    {
     },
     {
       "name": "Combo Deal 7",
+      "id": 7,
+      
       "items": [
         { "name": "cup-cakes:", "quantity": 6 },
         { "name": "4-inch cake:", "quantity": 1 },

@@ -3,15 +3,6 @@ import React, { useState, useEffect } from "react";
 export const useCart = (id, item) => {
   const [cartItems, setCartItems] = useState([]);
 
-  // const addToCart = (newItem) => {
-  //   let cartItems = [];
-  //   setCartItems((prevItems) => {
-  //     const newItems = [...prevItems];
-  //     newItems.push(newItem);
-  //     localStorage.setItem("cartItems", JSON.stringify(newItems));
-  //     return newItems;
-  //   });
-  // };
   const addToCart = (newItem) => {
     setCartItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex((item) => item === newItem);
@@ -73,15 +64,19 @@ export const useCart = (id, item) => {
 
   const decreaseQuantity = (item) => {
     setCartItems((prevItems) => {
-      const updatedItems = prevItems.map((prevItem) => {
-        if (prevItem?.id === item?.id) {
-          const updatedQuantity = prevItem.quantity - 1;
-          if (updatedQuantity >= 0) {
-            return { ...prevItem, quantity: updatedQuantity };
+      const updatedItems = prevItems
+        .map((prevItem) => {
+          if (prevItem?.id === item?.id) {
+            const updatedQuantity = prevItem.quantity - 1;
+            if (updatedQuantity >= 0) {
+              return { ...prevItem, quantity: updatedQuantity };
+            } else {
+              return null;
+            }
           }
-        }
-        return prevItem;
-      });
+          return prevItem;
+        })
+        .filter(Boolean);
       localStorage.setItem("cartItems", JSON.stringify(updatedItems));
       return updatedItems;
     });

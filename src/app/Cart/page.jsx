@@ -1,92 +1,10 @@
-// "use client";
-// import React from "react";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { useCart } from "../_components/Cart";
-// import { RiDeleteBin5Line } from "react-icons/ri";
-
-// const Cart = (item) => {
-//   const {
-//     cartItems,
-//     // removeFromCart,
-//     clearCart,
-//     calculateTotalPrice,
-//     increaseQuantity,
-//     decreaseQuantity,
-//   } = useCart();
-
-//   return (
-//     <div>
-//       <span className="flex justify-center mt-3">
-//         <h2 className="text-2xl font-bold text-center justify-center">
-//           Cart Items
-//         </h2>
-//         <span className="ml-[20%] hover:text">
-//           <RiDeleteBin5Line
-//             size={20}
-//             onClick={clearCart}
-//             title="Clear cart items?"
-//           />
-//         </span>
-//       </span>
-//       {cartItems.length === 0 ? (
-//         <p className="text-center">No items in the cart.</p>
-//       ) : (
-//         <ul className="grid grid-cols-2 ml-8 rounded-md gap-5">
-//           {cartItems.map((item, index) => (
-//             <div key={index} className="rounded-md gap-5  p-2 bg-white">
-//               <Image src={item.image} width={200} height={100} alt="image" />
-//               <li>{item.name}</li>
-//               <li>{item.description}</li>
-//               <li>₦{item.price}</li>
-//               <div className="flex justify-between items-center">
-//                 <button
-//                   type="button"
-//                   className=" rounded-lg p-2 mt-2  hover:scale-105 transition-transform duration-300"
-//                   onClick={() => decreaseQuantity(item)}
-//                 >
-//                   -
-//                 </button>
-//                 <span>{item.quantity}</span>
-//                 <button
-//                   type="button"
-//                   className=" rounded-lg p-2 mt-2  hover:scale-105 transition-transform duration-300"
-//                   onClick={() => increaseQuantity(item)}
-//                 >
-//                   +
-//                 </button>
-//               </div>
-//               {/* <button
-//                 className=" rounded-lg p-2 mt-2"
-//                 onClick={() => removeFromCart(item)}
-//               >
-//                 Remove
-//               </button> */}
-//             </div>
-//           ))}
-//         </ul>
-//       )}
-//       <div className="text-center text-lg font-bold mt-4">
-//         <h3>Total Price: ₦{calculateTotalPrice()}</h3>
-//       </div>
-//       <Link href="/">
-//         <button className="bg-green-500 hover:bg-green-700 rounded-lg p-2">
-//           Back Home
-//         </button>
-//       </Link>
-//     </div>
-//   );
-// };
-
-// export default Cart;
 "use client";
 import React from "react";
-import { useCart } from "../_components/Cart"; // Import the custom hook
+import { useCart } from "../_components/Cart";
 import Image from "next/image";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
-const CartComponent = () => {
-  // Use the custom hook to access cart functionality and state
+const Cart = () => {
   const {
     cartItems,
     isItemInCart,
@@ -97,64 +15,49 @@ const CartComponent = () => {
     increaseQuantity,
   } = useCart();
 
-  // Render the cart items
-  const renderCartItems = () => {
+  const fixCartItems = () => {
     if (cartItems.length === 0) {
-      return <p>Your cart is empty.</p>;
+      return <p>cart is currently empty.</p>;
     }
-    <span className="flex justify-center mt-3">
-      <h2 className="text-2xl font-bold text-center justify-center">
-        Cart Items
-      </h2>
-      <span className="ml-[20%] hover:text">
-        <RiDeleteBin5Line
-          size={20}
-          onClick={clearCart}
-          title="Clear cart items?"
-        />
-      </span>
-    </span>;
     return cartItems.map((item) => (
-      <div key={item?.id} className="rounded-md gap-5  p-2 bg-white">
-        <Image src={item?.image} width={200} height={100} alt="image" />
-        <p>Item: {item?.name}</p>
-        <p>Price: ₦{item?.price}</p>
-        <p>Quantity: {item?.quantity}</p>
-        <div className="flex gap-10">
-          <button
-            type="button"
-            className=" rounded-lg p-2 mt-2  hover:scale-105 transition-transform duration-300"
-            onClick={() => decreaseQuantity(item)}
-          >
-            -
-          </button>
-          <span className="mt-3">{item?.quantity}</span>
-          <button
-            type="button"
-            className=" rounded-lg p-2 mt-2  hover:scale-105 transition-transform duration-300"
-            onClick={() => increaseQuantity(item)}
-          >
-            +
-          </button>
+      <div key={item?.id} className="mr-6 ml-6 mb-6">
+        <div className="rounded-md">
+          <Image src={item?.image} height={-1} width={1000} alt="image" />
+          <div className="w-full border rounded-md hover:scale-105 shadow-xl shadow-[#262620] transition-all duration-300 border-[#626260]">
+            <p>Item: {item?.name}</p>
+            <p>Price: ₦{item?.price}</p>
+            <p>Quantity: {item?.quantity}</p>
+            <div className="flex gap-6 mr-6 ml-6">
+              <button
+                type="button"
+                className="rounded-lg p-2 mt-2 hover:scale-105 transition-transform duration-300"
+                onClick={() => decreaseQuantity(item)}
+              >
+                -
+              </button>
+              <span className="mt-3">{item?.quantity}</span>
+              <button
+                type="button"
+                className="rounded-lg p-2 mt-2 hover:scale-105 transition-transform duration-300"
+                onClick={() => increaseQuantity(item)}
+              >
+                +
+              </button>
+            </div>
+          </div>
         </div>
-        {/* <button
-                 className=" rounded-lg p-2 mt-2"
-                 onClick={() => removeFromCart(item)}
-               >
-                 Remove
-               </button> */}
       </div>
     ));
   };
 
   return (
-    <div>
-      <h1>Cart</h1>
-      {renderCartItems()}
-      <p>Total Price: ₦{calculateTotalPrice()}</p>
+    <div className="text-center">
+      <h1 className="font-bold text-md mb-4">Cart Items</h1>
+      <div className="grid grid-cols-2 gap-4">{fixCartItems()}</div>
+      <p className="mt-8 font-bold">Total Price: ₦{calculateTotalPrice()}</p>
       <button onClick={() => clearCart()}>Clear Cart</button>
     </div>
   );
 };
 
-export default CartComponent;
+export default Cart;

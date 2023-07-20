@@ -9,18 +9,10 @@ import Fav from "../_components/Favorite";
 import { useCart } from "../_components/Cart";
 
 export default function Deals() {
-  const { addToCart } = useCart();
-  const { cartItems } = useCart();
+  const { addToCart, cartItems } = useCart();
 
   const handleAddToCart = (deal, newItem) => {
-    addToCart((prevItems) => {
-      const updatedItems = { ...prevItems };
-      if (!updatedItems[deal.name]) {
-        updatedItems[deal.name] = [];
-      }
-      updatedItems[deal.name].push(newItem);
-      return updatedItems;
-    });
+    addToCart({ ...newItem, name: deal.name });
   };
 
   return (
@@ -37,7 +29,7 @@ export default function Deals() {
             <Image src={deal.image} alt="image" width={300} height={200} />
             <div className="border rounded-md hover:scale-105 shadow-xl shadow-[#262620] transition-all duration-300 border-[#626260] p-3">
               {deal.items.map((item) => (
-                <section key={item.name} className="flex gap-2">
+                <section key={item.id} className="flex gap-2">
                   <h2>{item.name}</h2>
                   <h2>{item.quantity}</h2>
                 </section>
@@ -45,9 +37,9 @@ export default function Deals() {
               <span className="flex gap-3">
                 <h2>price:₦ {deal.price}</h2>
                 <Button
-                  deal={deal}
+                  item={deal}
                   addToCart={(newItem) => handleAddToCart(deal, newItem)}
-                  cartItems={cartItems[deal.name] || []}
+                  cartItems={cartItems}
                 />
               </span>
               <Fav id={deal} />
