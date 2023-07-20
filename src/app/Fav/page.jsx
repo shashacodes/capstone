@@ -16,7 +16,10 @@ export default function Page() {
   };
 
   const handleAddToFavorites = (item) => {
-    if (!favorites.find((favItem) => favItem.id === item.id)) {
+    const isAlreadyFavorited = favorites.find(
+      (favItem) => favItem.id === item.id
+    );
+    if (!isAlreadyFavorited) {
       const updatedFavorites = [...favorites, item];
       setFavorites(updatedFavorites);
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
@@ -70,12 +73,12 @@ export default function Page() {
 
               <li>{item.name}</li>
               <li>₦{item.price} /kg</li>
-              {/* <Button onClick={() => addToCart(item)} />
-              <div className="flex gap-2 mt-2"> */}
+              {/* <Button onClick={() => addToCart(item)} /> */}
+              {/* <div className="flex gap-2 mt-2"> */}
               {/* <button onClick={() => handleRemove(item)}>Remove</button> */}
               {/* Add any additional UI or functionality for decreasing the quantity */}
+              {/* </div> */}
             </div>
-            // </div>
           ))}
         </ul>
       )}

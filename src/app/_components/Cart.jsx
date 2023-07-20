@@ -14,9 +14,7 @@ export const useCart = (id, item) => {
   // };
   const addToCart = (newItem) => {
     setCartItems((prevItems) => {
-      const existingItemIndex = prevItems.findIndex(
-        (item) => item.id === newItem.id
-      );
+      const existingItemIndex = prevItems.findIndex((item) => item === newItem);
       if (existingItemIndex !== -1) {
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex].quantity += newItem.quantity;

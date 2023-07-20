@@ -1123,8 +1123,8 @@ const Menu = () => {
           <div
             className={
               menuOpen
-                ? "fixed left-0 top-0 md:w-[40%] w-[100%] px-[3rem] bg-[#01AC66] rounded-xl ease-in overflow-y-auto z-50"
-                : "fixed left-[-100%] top-0 px-[3rem] ease-in h-screen "
+                ? "fixed left-0 top-0 md:w-[40%] w-[90%] px-[3rem] bg-[#01AC66] rounded-xl ease-in overflow-y-auto z-50"
+                : "fixed left-[-100%] top-0 px-[3rem] ease-in h-screen overflow-y-auto z-50"
             }
           >
             <div className="flex w-full items-center mt-[3rem] justify-end">
@@ -1140,7 +1140,7 @@ const Menu = () => {
                 alt="icon"
                 className="border rounded-full mr-4 mt-[48px]"
               />
-              <div className="flex-col mt-8 bg-[#01AC66] text-white h-[250px] overflow-y-auto">
+              <div className="flex-col mt-8 bg-[#01AC66] text-white overflow-y-auto">
                 <h1 className="gap-5 text-2xl font-bold mb-6">
                   Welcome Sharon!
                 </h1>
@@ -1248,12 +1248,12 @@ const Menu = () => {
       </div>
       <div className="border border-gray-500 mt-10 md:text-lg text-sm font-bold rounded-lg">
         <div className="ml-6 mr-6 mt-[10%]">
-          <Link href="/Categories">
-            <section className="flex justify-between mb-2">
-              <h1>Categories</h1>
-              <p className="font-bold">see all</p>{" "}
-            </section>
-          </Link>
+          <section className="flex justify-between mb-2">
+            <h1>Categories</h1>
+            <Link href="/Categories">
+              <p>see all</p>{" "}
+            </Link>
+          </section>
 
           <div className=" gap-3 md:max-w-[640px] max-w-[480px]">
             <div className="grid grid-cols-4 gap-4">

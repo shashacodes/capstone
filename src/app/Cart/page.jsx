@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useCart } from "../_components/Cart";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
-const Cart = () => {
+const Cart = (item) => {
   const {
     cartItems,
     // removeFromCart,

@@ -68,7 +68,7 @@ const SearchBar = ({ data }) => {
           </button>
         </form>
         <span className="border rounded-md bg-[#01AC66]  p-2">
-          <LuSettings2 size={25} style={{ color: "white" }} />
+          <LuSettings2 size={25} style={{ color: "black" }} />
         </span>{" "}
       </div>
 

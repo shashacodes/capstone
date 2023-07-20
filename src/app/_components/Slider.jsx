@@ -92,7 +92,7 @@ export default function Slider() {
       modules={[Pagination, Navigation, Autoplay, Scrollbar]}
       spaceBetween={70}
       slidesPerView={2}
-      autoplay={{ delay: 5000 }}
+      autoplay={{ delay: 3000 }}
       loop
       navigation
       pagination={{ clickable: true }}
