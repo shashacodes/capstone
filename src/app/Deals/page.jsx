@@ -32,7 +32,7 @@ export default function Deals() {
       </Link>
       <div className="grid grid-cols-2 gap-4 mt-3 p-3 border rounded-md">
         {deals.map((deal) => (
-          <div key={deal.name} className="rounded-md ">
+          <div key={deal.id} className="rounded-md ">
             <h1 className="font-bold text-xl mt-3">{deal.name}</h1>
             <Image src={deal.image} alt="image" width={300} height={200} />
             <div className="border rounded-md hover:scale-105 shadow-xl shadow-[#262620] transition-all duration-300 border-[#626260] p-3">

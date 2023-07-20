@@ -38,8 +38,8 @@ export const useCart = (id, item) => {
     }
 
     const totalPrice = cartItems.reduce((total, item) => {
-      const itemPrice = Number(item.price);
-      const itemQuantity = parseInt(item.quantity);
+      const itemPrice = Number(item?.price);
+      const itemQuantity = parseInt(item?.quantity);
 
       if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
         return total + itemPrice * itemQuantity;
@@ -61,8 +61,8 @@ export const useCart = (id, item) => {
   const increaseQuantity = (item) => {
     setCartItems((prevItems) => {
       const updatedItems = prevItems.map((prevItem) => {
-        if (prevItem.id === item.id) {
-          return { ...prevItem, quantity: prevItem.quantity + 1 };
+        if (prevItem?.id === item?.id) {
+          return { ...prevItem, quantity: prevItem?.quantity + 1 };
         }
         return prevItem;
       });
@@ -74,7 +74,7 @@ export const useCart = (id, item) => {
   const decreaseQuantity = (item) => {
     setCartItems((prevItems) => {
       const updatedItems = prevItems.map((prevItem) => {
-        if (prevItem.id === item.id) {
+        if (prevItem?.id === item?.id) {
           const updatedQuantity = prevItem.quantity - 1;
           if (updatedQuantity >= 0) {
             return { ...prevItem, quantity: updatedQuantity };
