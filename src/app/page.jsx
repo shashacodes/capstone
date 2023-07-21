@@ -1123,8 +1123,8 @@ const Menu = () => {
           <div
             className={
               menuOpen
-                ? "fixed left-0 top-0 md:w-[40%] w-[90%] px-[3rem] bg-[#01AC66] rounded-xl ease-in overflow-y-auto z-50"
-                : "fixed left-[-100%] top-0 px-[3rem] ease-in h-screen overflow-y-auto z-50"
+                ? "fixed left-0 top-0 md:w-[40%] w-[90%] px-[3rem] bg-[#01AC66] h-[350px] rounded-xl ease-in overflow-y-auto z-50"
+                : "fixed left-[-100%] top-0 px-[3rem] ease-in  overflow-y-auto z-50"
             }
           >
             <div className="flex w-full items-center mt-[3rem] justify-end">
