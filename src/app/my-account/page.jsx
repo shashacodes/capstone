@@ -74,15 +74,17 @@ const Profile = () => {
         <h2 className="md:text-2xl text-sm font-extrabold p-5">
           Account overview
         </h2>
-        <section className="flex p-5 hover:translate-x-2">
-          <span className="border bg-white border-[#626260] rounded-xl p-3">
-            <BsFillPersonFill color="green" />
-          </span>
-          <h3 className="ml-[10%] hover:translate-x-2">My Profile</h3>
-          <span className="md:ml-[60%] ml-[50%]">
-            <GrFormNext />
-          </span>
-        </section>
+        <Link href="/Profile">
+          <section className="flex p-5 hover:translate-x-2">
+            <span className="border bg-white border-[#626260] rounded-xl p-3">
+              <BsFillPersonFill color="green" />
+            </span>
+            <h3 className="ml-[10%] hover:translate-x-2">My Profile</h3>
+            <span className="md:ml-[60%] ml-[50%]">
+              <GrFormNext />
+            </span>
+          </section>
+        </Link>
         <Link href="/Cart">
           <section className="flex p-5 hover:translate-x-2">
             <span className="border bg-white border-[#626260] rounded-xl p-3">
