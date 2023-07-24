@@ -27,9 +27,7 @@ export default function Page({ params }) {
   return (
     <div className="mt-3 p-2">
       <Link href="/Categories">
-        <span className="">
-          <MdArrowBackIosNew size={20} />
-        </span>
+        <MdArrowBackIosNew size={20} />
       </Link>
       <div className="grid grid-cols-3 border border-[#626260] rounded-md text-sm mt-5 p-3 gap-4">
         {products.map((product) => (
