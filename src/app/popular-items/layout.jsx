@@ -1,6 +1,6 @@
-import { Rubik_Dirt } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const inter = Rubik_Dirt({ subsets: ["latin"], weight: ["400"] });
+const inter = Roboto({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata = {
   title: "Popular-items",

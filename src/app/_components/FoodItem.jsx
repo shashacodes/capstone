@@ -28,7 +28,7 @@ const FoodItem = ({ food }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="border border-[#626260] bg-[#E6F7F0] shadow-xl shadow-[#262620] p-4">
+      <div className="border border-[#626260] bg-[#E6F7F0] shadow-xl shadow-[#262620] md:p-4">
         <div className="h-[130px] relative">
           <div
             className={`absolute inset-0 ${
@@ -48,7 +48,7 @@ const FoodItem = ({ food }) => {
         </div>
         <div className="p-4 border-t border-black">
           <p className="text-xl font-medium text-center">{food.name}</p>
-          <p className="text-lg mt-2">₦{food.price} /kg</p>
+          <p className="text-lg mt-2">₦{food.price}/kg</p>
           <Button item={food} addToCart={addToCart} />
         </div>
       </div>
