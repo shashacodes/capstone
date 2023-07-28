@@ -47,8 +47,8 @@ export default function Page({ params }) {
               <Fav id={product} />
               <span className="flex space-x-3">
                 <p className="mb-0">Price: ₦{product.price}/kg</p>
-                <Button item={product} addToCart={addToCart} />
               </span>
+              <Button item={product} addToCart={addToCart} />
             </section>
           </div>
         ))}
