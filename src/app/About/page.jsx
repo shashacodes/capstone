@@ -25,12 +25,15 @@ export default function page() {
         </strong>
         That's why we have partnered with trusted local suppliers and farmers to
         bring you the finest selection of fruits, vegetables, dairy products,
-        baked goods, snacks, and more. With our user-friendly interface and
-        intuitive features, you can browse through our extensive catalog, search
-        for specific items, and discover new products that meet your
-        preferences. You can easily add items to your cart, manage your shopping
-        list, and even save your favorite items for future purchases. We
-        prioritize the convenience of our customers, which is why we offer
+        baked goods, snacks, and more.
+        <p>
+          With our user-friendly interface and intuitive features, you can
+          browse through our extensive catalog, search for specific items, and
+          discover new products that meet your preferences. You can easily add
+          items to your cart, manage your shopping list, and even save your
+          favorite items for future purchases.
+        </p>
+        We prioritize the convenience of our customers, which is why we offer
         flexible delivery options right to your doorstep. <br />
         Say goodbye to long queues and heavy grocery bags - let us handle the
         logistics while you enjoy more time for the things that matter most.
@@ -39,12 +42,14 @@ export default function page() {
         is available to assist you with any inquiries, concerns, or feedback you
         may have. We value your input and continuously work to enhance our app
         based on your needs and preferences.
-        <strong className="text-green-500">
-          Thank you for choosing Sharon's Groceries as your go-to grocery
-          shopping solution. We are committed to helping you make grocery
-          shopping convenient, efficient, and enjoyable. Happy shopping!{" "}
-          <em>The Sharon's Groceries Team</em>
-        </strong>
+        <p>
+          <strong className="text-green-500">
+            Thank you for choosing Sharon's Groceries as your go-to grocery
+            shopping solution. We are committed to helping you make grocery
+            shopping convenient, efficient, and enjoyable. Happy shopping!{" "}
+            <em>The Sharon's Groceries Team</em>
+          </strong>
+        </p>
       </p>
     </div>
   );
