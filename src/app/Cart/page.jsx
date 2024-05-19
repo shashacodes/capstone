@@ -2,7 +2,8 @@
 import React from "react";
 import { useCart } from "../_components/Cart";
 import Image from "next/image";
-import { RiDeleteBin5Line } from "react-icons/ri";
+import Link from "next/link";
+import { MdArrowBackIosNew } from "react-icons/md";
 
 const Cart = () => {
   const {
@@ -52,7 +53,14 @@ const Cart = () => {
 
   return (
     <div className="text-center">
-      <h1 className="font-bold text-md mb-4">Cart Items</h1>
+      <section className="border rounded-lg m-6 bg-[#E6F7F0] w-[30px]">
+        <Link href="/">
+          <span>
+            <MdArrowBackIosNew size={20} style={{ color: "black" }} />
+          </span>
+        </Link>
+      </section>
+      <h1 className="font-bold text-md mt-6 mb-6">Cart Items</h1>
       <div className="grid grid-cols-2 gap-4">{fixCartItems()}</div>
       <p className="mt-8 font-bold">Total Price: ₦{calculateTotalPrice()}</p>
       <button onClick={() => clearCart()}>Clear Cart</button>

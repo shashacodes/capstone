@@ -1114,7 +1114,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="text-[20px]   mt-3 text-black mx-[1rem]">
+    <div className="text-[20px]  mt-3 text-black mx-[1rem]">
       <div className="flex flex-col-1 justify-between ml-6 mr-6">
         <div>
           <li onClick={handleMenu} className=" cursor-pointer mt-[36px] ">
@@ -1246,7 +1246,7 @@ const Menu = () => {
       <div>
         <SearchBar data={newCat} />
       </div>
-      <div className="border border-gray-500 mt-10 md:text-lg text-sm font-bold rounded-lg">
+      <div className=" mt-10 md:text-lg text-sm font-bold rounded-lg">
         <div className="ml-6 mr-6 mt-[10%]">
           <section className="flex justify-between mb-2">
             <h1>Categories</h1>
@@ -1255,7 +1255,7 @@ const Menu = () => {
             </Link>
           </section>
 
-          <div className=" gap-3 md:max-w-[640px] max-w-[480px]">
+          <div className=" gap-3 ">
             <div className="grid grid-cols-4 gap-4">
               {categories.slice(0, 4).map((cat) => {
                 return (
@@ -1285,12 +1285,12 @@ const Menu = () => {
               </section>
             </Link>
 
-            <div className="grid grid-cols-2 mr-6 ml-6 border md:w-[500px] w-[300px] bg-[#01Ac66] text-white rounded-xl ">
+            <div className="grid grid-cols-2  border bg-[#01Ac66] text-white rounded-xl ">
               <h2 className="md:text-xl text-md font-bold mx-10 mb-5 pt-5">
                 50% off <br />
                 On Grocery Combo packs
               </h2>
-              <aside className="ml-[50%] grid-cols-1 my-6">
+              <aside className="ml-[50%]                grid-cols-1 my-6">
                 <Image
                   className=""
                   src={pic}
@@ -1307,7 +1307,7 @@ const Menu = () => {
             </div>
           </div>
 
-          <div className="ml-6 mr-6 mt-10">
+          <div className="ml-6 mr-6 mt-14">
             <Link href="/popular-items">
               <section className="flex justify-between text-xl">
                 <h1>Popular Items</h1>

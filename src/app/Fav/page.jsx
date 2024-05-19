@@ -10,8 +10,6 @@ export default function Page() {
   const [favorites, setFavorites] = useState([]);
 
   const addToCart = (item) => {
-    // Add the item to the cart
-    // Implement your logic here
     console.log("Added to cart:", item);
   };
 

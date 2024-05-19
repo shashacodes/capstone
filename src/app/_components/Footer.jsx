@@ -21,8 +21,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="mb-[25%] md:w-[40%] w-full">
-      <ul className="flex justify-between md:w-[550px] w-full  md:mr-8 gap-8 border text-white rounded-md bg-[#01Ac66] z-50 fixed bottom-0 md:text-xl text-sm">
+    <footer className=" w-full">
+      <ul className="flex justify-between  w-full  gap-8 border text-white rounded-md bg-[#01Ac66] z-50 fixed bottom-0 md:text-xl text-sm">
         <li
           className={`hover:translate-x-2 ${
             activeIcon === "/" ? "text-green-400" : ""

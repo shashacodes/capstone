@@ -47,7 +47,7 @@ export const useCart = (id, item) => {
     if (storedCartItems) {
       setCartItems(JSON.parse(storedCartItems));
     }
-  }, [...cartItems, cartItems]);
+  }, [...cartItems]);
 
   const increaseQuantity = (item) => {
     setCartItems((prevItems) => {
